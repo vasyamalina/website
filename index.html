@@ -71,7 +71,7 @@
     <div class="glow-effect top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="glow-effect top-2/3 right-10"></div>
 
-    <!-- Шапка сайта с выпадающим меню языков -->
+    <!-- Шапка сайта с селектором языка -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#CCD5CB]/90 backdrop-blur-md border-b border-[#1E382B]/10">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="font-serif text-xl tracking-wide text-accent font-bold flex items-center gap-2">
@@ -88,20 +88,20 @@
             </nav>
 
             <div class="flex items-center gap-4">
-                <!-- Селектор языка с флагами (РФ и Великобритания) -->
+                <!-- Селектор языка -->
                 <div class="relative">
-                    <button id="lang-menu-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-accent/40 bg-white/50 text-xs font-semibold text-accent hover:bg-white transition-all shadow-sm focus:outline-none">
-                        <span id="current-flag">🇷🇺</span>
-                        <span id="current-lang-text">RU</span>
+                    <button id="lang-menu-btn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent/40 bg-white/60 text-xs font-semibold text-accent hover:bg-white transition-all shadow-sm focus:outline-none">
+                        <span id="current-flag" class="text-base">🇷🇺</span>
+                        <span id="current-lang-text">Русский</span>
                         <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
                     </button>
                     <!-- Выпадающее окно -->
-                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-28 bg-white border border-[#1E382B]/15 rounded-xl shadow-xl overflow-hidden z-50">
-                        <button onclick="setLanguage('ru')" class="w-full flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
-                            <span>🇷🇺</span> Русский
+                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-white border border-[#1E382B]/15 rounded-xl shadow-xl overflow-hidden z-50">
+                        <button onclick="setLanguage('ru')" class="w-full flex items-center gap-3 px-3.5 py-2.5 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
+                            <span class="text-base">🇷🇺</span> Русский
                         </button>
-                        <button onclick="setLanguage('en')" class="w-full flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
-                            <span>🇬🇧</span> English
+                        <button onclick="setLanguage('en')" class="w-full flex items-center gap-3 px-3.5 py-2.5 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
+                            <span class="text-base">🇬🇧</span> English
                         </button>
                     </div>
                 </div>
@@ -422,7 +422,7 @@
         </div>
     </footer>
 
-    <!-- Скрипт переключения языков и выпадающего меню флагов -->
+    <!-- Скрипт переключения языков -->
     <script>
         lucide.createIcons();
 
@@ -440,7 +440,7 @@
             });
         });
 
-        // Логика выпадающего меню флагов
+        // Логика выпадающего меню
         const langMenuBtn = document.getElementById('lang-menu-btn');
         const langDropdown = document.getElementById('lang-dropdown');
         const currentFlag = document.getElementById('current-flag');
@@ -455,15 +455,15 @@
             langDropdown.classList.add('hidden');
         });
 
-        // Функция смены языка (с флагом Великобритании 🇬🇧 для EN)
+        // Функция смены языка с отображением флага и полного названия
         function setLanguage(lang) {
             currentLang = lang;
             if (lang === 'ru') {
                 currentFlag.textContent = '🇷🇺';
-                currentLangText.textContent = 'RU';
+                currentLangText.textContent = 'Русский';
             } else {
                 currentFlag.textContent = '🇬🇧';
-                currentLangText.textContent = 'EN';
+                currentLangText.textContent = 'English';
             }
 
             // Переключаем тексты по дата-атрибутам
