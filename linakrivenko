@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Василина Кривенко — Influence-менеджер & Писательница</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#141f19',        // Глубокий, насыщенный лесной фон
+                        cardbg: '#1b2b23',        // Темно-зеленые плашки в тон фона
+                        cardhover: '#22362b',     // Насыщенный тон при наведении
+                        accent: '#82a893',        // Мягкий мятно-зеленый акцент
+                        bordercolor: '#283f33'    // Аккуратные рамки
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #141f19;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .white-card {
+            background: #1b2b23;
+            color: #ffffff;
+            border: 1px solid #283f33;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+        }
+        .white-card:hover {
+            border-color: #82a893;
+            box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+        .glow-effect {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(130, 168, 147, 0.15) 0%, rgba(20, 31, 25, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-white antialiased relative">
+
+    <div class="glow-effect top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="glow-effect top-2/3 right-10"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#141f19]/95 backdrop-blur-md border-b border-[#22362b]">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-xl tracking-wide text-white font-bold flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#82a893]"></span>
+                Василина Кривенко
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-white">
+                <a href="#about" class="hover:text-[#82a893] transition-colors">Обо мне</a>
+                <a href="#projects" class="hover:text-[#82a893] transition-colors">Проекты и Опыт</a>
+                <a href="#hobbies" class="hover:text-[#82a893] transition-colors">Хобби</a>
+                <a href="#books" class="hover:text-[#82a893] transition-colors">Книги</a>
+                <a href="#contacts" class="hover:text-[#82a893] transition-colors">Контакты</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#contacts" class="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold px-4 py-2.5 rounded-full border border-[#82a893]/60 text-white hover:bg-[#82a893] hover:text-[#141f19] transition-all">
+                    Связаться
+                </a>
+                <button id="menu-btn" class="md:hidden text-white hover:text-[#82a893] focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#1b2b23] border-b border-[#22362b] p-6 flex flex-col gap-4 shadow-2xl">
+            <a href="#about" class="mobile-link text-white hover:text-[#82a893] font-semibold py-2">Обо мне</a>
+            <a href="#projects" class="mobile-link text-white hover:text-[#82a893] font-semibold py-2">Проекты и Опыт</a>
+            <a href="#hobbies" class="mobile-link text-white hover:text-[#82a893] font-semibold py-2">Хобби</a>
+            <a href="#books" class="mobile-link text-white hover:text-[#82a893] font-semibold py-2">Книги</a>
+            <a href="#contacts" class="mobile-link text-white hover:text-[#82a893] font-semibold py-2">Контакты</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-20">
+        <section id="hero" class="min-h-[80vh] flex items-center justify-center px-6 py-20 relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full white-card text-xs tracking-wider uppercase text-white mb-6 font-bold shadow-md">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#82a893]"></i> 6 лет опыта в Influence Marketing
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                    Василина Кривенко
+                </h1>
+                <p class="text-lg sm:text-2xl font-medium text-white mb-6 font-serif italic">
+                    Influence-менеджер & Писательница
+                </p>
+                <p class="text-base sm:text-xl font-normal text-white mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Превращаю творческие идеи и рекламные кампании в масштабные проекты с высокой конверсией. Создаю глубокие миры в книгах и успешные коллаборации с брендами в жизни.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="#about" class="px-8 py-3.5 rounded-full bg-[#82a893] text-[#141f19] font-bold text-sm tracking-wider uppercase hover:bg-[#96bcab] transition-all shadow-lg shadow-black/30">
+                        Обо мне
+                    </a>
+                    <a href="#projects" class="px-8 py-3.5 rounded-full white-card text-white font-bold text-sm tracking-wider uppercase hover:border-[#82a893] transition-all">
+                        Мои проекты
+                    </a>
+                    <a href="#books" class="px-8 py-3.5 rounded-full border border-[#82a893]/50 text-white font-bold text-sm tracking-wider uppercase hover:bg-white/10 transition-all">
+                        Мои книги
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6 border-t border-b border-[#22362b] bg-[#18261e]/70">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="white-card p-6 rounded-2xl">
+                    <p class="font-serif text-4xl font-bold text-white mb-2">6 лет</p>
+                    <p class="text-xs text-white uppercase tracking-widest font-bold">Опыта работы</p>
+                </div>
+                <div class="white-card p-6 rounded-2xl">
+                    <p class="font-serif text-4xl font-bold text-white mb-2">3 книги</p>
+                    <p class="text-xs text-white uppercase tracking-widest font-bold">Авторских произведения</p>
+                </div>
+                <div class="white-card p-6 rounded-2xl">
+                    <p class="font-serif text-4xl font-bold text-white mb-2">100+ млн</p>
+                    <p class="text-xs text-white uppercase tracking-widest font-bold">Открученного бюджета в рекламе</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 px-6 border-t border-[#22362b]">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white font-bold mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span> Биография & История
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Обо мне
+                    </h2>
+                </div>
+
+                <div class="white-card p-8 sm:p-12 rounded-3xl relative">
+                    <div class="absolute -top-6 -left-6 text-white/10 font-serif text-8xl select-none pointer-events-none">“</div>
+                    <p class="text-lg sm:text-xl font-normal text-white leading-relaxed relative z-10 text-center sm:text-left">
+                        Привет! Я Василина. Родилась и выросла в атмосферном Красноярске, прожила в Екатеринбурге и уехала в Сербию, получаю образование философа, сегодня моя профессиональная деятельность охватывает удаленные международные проекты. За плечами — 6 лет опыта в инфлюенс-маркетинге. Я прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний. Работала с компаниями из различных ниш: от e-commerce, fashion и бьюти-брендов до технологических стартапов.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 px-6 border-t border-[#22362b] bg-[#18261e]/50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white font-bold mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span> Экспертиза & Проекты
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Чем я занимаюсь
+                    </h2>
+                    <p class="text-white font-normal leading-relaxed text-base">
+                        Мой опыт охватывает полный цикл работы с блогерами и создание вирусного контента.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="white-card p-8 rounded-2xl relative group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-[#82a893]/10 flex items-center justify-center text-[#82a893] mb-6 group-hover:bg-[#82a893] group-hover:text-[#141f19] transition-all">
+                                <i data-lucide="megaphone" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-3">Influence-маркетинг</h3>
+                            <p class="text-white text-base leading-relaxed mb-6 font-normal">
+                                Разработка стратегий продвижения брендов через блогеров на платформах YouTube, Telegram, Instagram, TikTok, MAX, Дзен, ВКонтакте с полным контролем ROI и CPC.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-[#283f33]">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">Стратегия</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">ROI & CPC</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">Мультиплатформа</span>
+                        </div>
+                    </div>
+
+                    <div class="white-card p-8 rounded-2xl relative group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-[#82a893]/10 flex items-center justify-center text-[#82a893] mb-6 group-hover:bg-[#82a893] group-hover:text-[#141f19] transition-all">
+                                <i data-lucide="building-2" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-3">Работа с брендами</h3>
+                            <p class="text-white text-base leading-relaxed mb-6 font-normal">
+                                Опыт сотрудничества с различными компаниями (от локальных стартапов до федеральных брендов).
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-[#283f33]">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">Стартапы</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">Федеральные бренды</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">Контракты</span>
+                        </div>
+                    </div>
+
+                    <div class="white-card p-8 rounded-2xl relative group flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-[#82a893]/10 flex items-center justify-center text-[#82a893] mb-6 group-hover:bg-[#82a893] group-hover:text-[#141f19] transition-all">
+                                <i data-lucide="video" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-3">UGC & Контент-направление</h3>
+                            <p class="text-white text-base leading-relaxed mb-6 font-normal">
+                                Создание ТЗ для пользовательского контента (UGC), организация съемок.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-[#283f33]">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">UGC</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#141f19] text-white font-medium border border-[#283f33]">ТЗ & Съемки</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies" class="py-24 px-6 border-t border-[#22362b]">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white font-bold mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span> Вдохновение
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Мои хобби & увлечения
+                    </h2>
+                    <p class="text-white font-normal text-base">
+                        То, что подпитывает мою креативность, дает силы для новых проектов и вдохновляет на написание историй.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="white-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4">
+                        <i data-lucide="feather" class="w-8 h-8 text-[#82a893]"></i>
+                        <span class="text-base font-bold text-white">Dark Romance & Художественная литература</span>
+                    </div>
+                    <div class="white-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4">
+                        <i data-lucide="palette" class="w-8 h-8 text-[#82a893]"></i>
+                        <span class="text-base font-bold text-white">AI Art & Визуальные концепты</span>
+                    </div>
+                    <div class="white-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4">
+                        <i data-lucide="compass" class="w-8 h-8 text-[#82a893]"></i>
+                        <span class="text-base font-bold text-white">Путешествия & новые места</span>
+                    </div>
+                    <div class="white-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4">
+                        <i data-lucide="trophy" class="w-8 h-8 text-[#82a893]"></i>
+                        <span class="text-base font-bold text-white">Хоккей</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="books" class="py-24 px-6 border-t border-[#22362b] bg-[#18261e]/50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white font-bold mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span> Писательство
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Мои книги
+                    </h2>
+                    <p class="text-white font-normal text-base">
+                        Изданные произведения под авторским именем <strong class="text-white">Лина Кривенко</strong>. Погружение в сложные эмоции, атмосферные миры и человеческие судьбы.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Book 1 -->
+                    <div class="white-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div class="h-64 bg-gradient-to-br from-[#141f19] via-[#1e3026] to-[#283f33] relative overflow-hidden flex flex-col items-center justify-center p-6 border-b border-[#283f33] text-center text-white">
+                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            <div class="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500 bg-white/10 shadow-sm">
+                                <i data-lucide="moon" class="w-7 h-7 text-[#b5d0c1]"></i>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-1">Лина Кривенко</span>
+                            <span class="font-serif text-2xl font-bold tracking-wider text-white">VESPER</span>
+                            <div class="absolute bottom-3 text-[10px] text-white tracking-widest uppercase font-semibold">Litres Edition</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-white font-bold">Роман / Драма</span>
+                                <h3 class="font-serif text-xl font-bold text-white mt-1 mb-2">VESPER</h3>
+                                <p class="text-white text-sm font-normal leading-relaxed mb-6">
+                                    История о поиске света в темноте, переплетении человеческих судеб и неизбежности выбора.
+                                </p>
+                            </div>
+                            <a href="https://www.litres.ru/74322623/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#82a893] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#82a893] hover:text-[#141f19] transition-all shadow-sm">
+                                Читать на ЛитРес <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="white-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div class="h-64 bg-gradient-to-br from-[#141f19] via-[#1e3026] to-[#283f33] relative overflow-hidden flex flex-col items-center justify-center p-6 border-b border-[#283f33] text-center text-white">
+                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            <div class="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500 bg-white/10 shadow-sm">
+                                <i data-lucide="link" class="w-7 h-7 text-[#b5d0c1]"></i>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-1">Лина Кривенко</span>
+                            <span class="font-serif text-2xl font-bold tracking-wider text-white">VINCULUM</span>
+                            <div class="absolute bottom-3 text-[10px] text-white tracking-widest uppercase font-semibold">Litres Edition</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-white font-bold">Триллер / Психология</span>
+                                <h3 class="font-serif text-xl font-bold text-white mt-1 mb-2">VINCULUM</h3>
+                                <p class="text-white text-sm font-normal leading-relaxed mb-6">
+                                    Неразрывные связи, ментальные ловушки и расплата за тайны прошлого.
+                                </p>
+                            </div>
+                            <a href="https://www.litres.ru/74523363/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#82a893] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#82a893] hover:text-[#141f19] transition-all shadow-sm">
+                                Читать на ЛитРес <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Book 3 -->
+                    <div class="white-card rounded-2xl overflow-hidden flex flex-col justify-between group">
+                        <div class="h-64 bg-gradient-to-br from-[#141f19] via-[#1e3026] to-[#283f33] relative overflow-hidden flex flex-col items-center justify-center p-6 border-b border-[#283f33] text-center text-white">
+                            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            <div class="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500 bg-white/10 shadow-sm">
+                                <i data-lucide="compass" class="w-7 h-7 text-[#b5d0c1]"></i>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-1">Лина Кривенко</span>
+                            <span class="font-serif text-2xl font-bold tracking-wider text-white">VENEZIA NERA</span>
+                            <div class="absolute bottom-3 text-[10px] text-white tracking-widest uppercase font-semibold">Litres Edition</div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <span class="text-xs uppercase tracking-widest text-white font-bold">Нуар / Детектив</span>
+                                <h3 class="font-serif text-xl font-bold text-white mt-1 mb-2">VENEZIA NERA</h3>
+                                <p class="text-white text-sm font-normal leading-relaxed mb-6">
+                                    Мрачная изнанка каналов старой Венеции, где маски скрывают истинные лица.
+                                </p>
+                            </div>
+                            <a href="https://www.litres.ru/74321349/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-[#82a893] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#82a893] hover:text-[#141f19] transition-all shadow-sm">
+                                Читать на ЛитРес <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="py-24 px-6 border-t border-[#22362b]">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white font-bold mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white"></span> На связи
+                </div>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+                    Давайте создадим что-то прекрасное вместе
+                </h2>
+                <p class="text-white font-normal text-base max-w-xl mx-auto mb-12">
+                    Открыта к предложениям по influence-маркетингу, рекламным кампаниям, сотрудничеству с брендами и творческим коллаборациям.
+                </p>
+
+                <div class="inline-flex items-center gap-8 text-white">
+                    <a href="https://t.me/vsnmln" target="_blank" class="w-14 h-14 rounded-full white-card text-white flex items-center justify-center hover:bg-[#82a893] hover:text-[#141f19] transition-all shadow-md" title="Telegram"><i data-lucide="send" class="w-6 h-6"></i></a>
+                    <a href="https://www.litres.ru/author/lina-krivenko-34026289/" target="_blank" class="w-14 h-14 rounded-full white-card text-white flex items-center justify-center hover:bg-[#82a893] hover:text-[#141f19] transition-all shadow-md" title="Litres Author Profile"><i data-lucide="book" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-[#22362b] bg-[#101914] text-center text-xs text-white">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Василина Кривенко. Все права защищены.</p>
+            <p class="font-semibold">Influence-менеджер & Писательница</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
