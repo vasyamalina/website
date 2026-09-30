@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth dark">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#0f1412',
-                        cardbg: '#17201c',
-                        cardhover: '#1e2b25',
-                        accent: '#95b8a6',
-                        accenthover: '#a8c9b9',
+                        darkbg: '#f3f6f4',      /* Светлый пастельно-фисташковый фон */
+                        cardbg: '#ffffff',      /* Чисто белый для карточек */
+                        cardhover: '#e8efe9',   /* Легкое уплотнение при наведении */
+                        accent: '#4a6b5d',      /* Глубокий благородный шалфей для акцентов и текстов */
+                        accenthover: '#3b5549', /* Темный шалфей при наведении */
+                        mutedtext: '#5c6b63',   /* Приглушенный текст */
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -31,8 +31,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
-            background-color: #0f1412;
-            color: #e2e8f0;
+            background-color: #f3f6f4;
+            color: #2c3631;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
@@ -40,36 +40,38 @@
             font-family: 'Playfair Display', serif;
         }
         .glass-card {
-            background: rgba(23, 32, 28, 0.75);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(149, 184, 166, 0.15);
+            border: 1px solid rgba(74, 107, 93, 0.12);
+            box-shadow: 0 10px 30px -10px rgba(74, 107, 93, 0.05);
         }
         .glass-card:hover {
-            border-color: rgba(149, 184, 166, 0.4);
+            border-color: rgba(74, 107, 93, 0.3);
+            box-shadow: 0 15px 35px -10px rgba(74, 107, 93, 0.1);
         }
         .glow-effect {
             position: absolute;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(149, 184, 166, 0.08) 0%, rgba(15, 20, 18, 0) 70%);
+            background: radial-gradient(circle, rgba(149, 184, 166, 0.2) 0%, rgba(243, 246, 244, 0) 70%);
             pointer-events: none;
             z-index: 0;
         }
     </style>
 </head>
-<body class="bg-darkbg text-slate-100 antialiased selection:bg-accent selection:text-darkbg relative">
+<body class="bg-darkbg text-slate-800 antialiased selection:bg-accent selection:text-white relative">
 
     <div class="glow-effect top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="glow-effect top-2/3 right-10"></div>
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-darkbg/80 backdrop-blur-md border-b border-emerald-950/60">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#f3f6f4]/85 backdrop-blur-md border-b border-emerald-900/10">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif text-xl tracking-wide text-slate-100 font-bold flex items-center gap-2">
+            <a href="#" class="font-serif text-xl tracking-wide text-slate-900 font-bold flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-accent"></span>
                 Василина Кривенко
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="#about" class="hover:text-accent transition-colors">Обо мне</a>
                 <a href="#projects" class="hover:text-accent transition-colors">Проекты и Опыт</a>
                 <a href="#hobbies" class="hover:text-accent transition-colors">Хобби</a>
@@ -78,21 +80,21 @@
             </nav>
 
             <div class="flex items-center gap-4">
-                <a href="#contacts" class="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold px-4 py-2.5 rounded-full border border-accent/40 text-accent hover:bg-accent hover:text-darkbg transition-all">
+                <a href="#contacts" class="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold px-4 py-2.5 rounded-full border border-accent/40 text-accent hover:bg-accent hover:text-white transition-all">
                     Связаться
                 </a>
-                <button id="menu-btn" class="md:hidden text-slate-300 hover:text-accent focus:outline-none">
+                <button id="menu-btn" class="md:hidden text-slate-700 hover:text-accent focus:outline-none">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-cardbg border-b border-emerald-950 p-6 flex flex-col gap-4 shadow-2xl">
-            <a href="#about" class="mobile-link text-slate-300 hover:text-accent font-medium py-2">Обо мне</a>
-            <a href="#projects" class="mobile-link text-slate-300 hover:text-accent font-medium py-2">Проекты и Опыт</a>
-            <a href="#hobbies" class="mobile-link text-slate-300 hover:text-accent font-medium py-2">Хобби</a>
-            <a href="#books" class="mobile-link text-slate-300 hover:text-accent font-medium py-2">Книги</a>
-            <a href="#contacts" class="mobile-link text-slate-300 hover:text-accent font-medium py-2">Контакты</a>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-emerald-900/10 p-6 flex flex-col gap-4 shadow-2xl">
+            <a href="#about" class="mobile-link text-slate-700 hover:text-accent font-medium py-2">Обо мне</a>
+            <a href="#projects" class="mobile-link text-slate-700 hover:text-accent font-medium py-2">Проекты и Опыт</a>
+            <a href="#hobbies" class="mobile-link text-slate-700 hover:text-accent font-medium py-2">Хобби</a>
+            <a href="#books" class="mobile-link text-slate-700 hover:text-accent font-medium py-2">Книги</a>
+            <a href="#contacts" class="mobile-link text-slate-700 hover:text-accent font-medium py-2">Контакты</a>
         </div>
     </header>
 
@@ -102,138 +104,138 @@
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs tracking-wider uppercase text-accent mb-6">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 6 лет опыта в Influence Marketing
                 </div>
-                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-100 mb-6 leading-tight">
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
                     Василина Кривенко
                 </h1>
-                <p class="text-lg sm:text-2xl font-light text-accent/90 mb-6 font-serif italic">
+                <p class="text-lg sm:text-2xl font-light text-accent mb-6 font-serif italic">
                     Influence-менеджер & Писательница
                 </p>
-                <p class="text-base sm:text-xl font-light text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-base sm:text-xl font-light text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
                     Превращаю творческие идеи и рекламные кампании в масштабные проекты с высокой конверсией. Создаю глубокие миры в книгах и успешные коллаборации с брендами в жизни.
                 </p>
                 <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="#about" class="px-8 py-3.5 rounded-full bg-accent text-darkbg font-semibold text-sm tracking-wider uppercase hover:bg-accenthover transition-all shadow-lg shadow-accent/10">
+                    <a href="#about" class="px-8 py-3.5 rounded-full bg-accent text-white font-semibold text-sm tracking-wider uppercase hover:bg-accenthover transition-all shadow-lg shadow-accent/15">
                         Обо мне
                     </a>
-                    <a href="#projects" class="px-8 py-3.5 rounded-full glass-card text-slate-200 font-semibold text-sm tracking-wider uppercase hover:border-accent transition-all">
+                    <a href="#projects" class="px-8 py-3.5 rounded-full glass-card text-slate-700 font-semibold text-sm tracking-wider uppercase hover:border-accent transition-all">
                         Мои проекты
                     </a>
-                    <a href="#books" class="px-8 py-3.5 rounded-full border border-emerald-900/60 text-slate-300 font-semibold text-sm tracking-wider uppercase hover:border-accent transition-all">
+                    <a href="#books" class="px-8 py-3.5 rounded-full border border-accent/30 text-slate-700 font-semibold text-sm tracking-wider uppercase hover:border-accent transition-all">
                         Мои книги
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="py-12 px-6 border-t border-b border-emerald-950/40 bg-cardbg/20">
+        <section class="py-12 px-6 border-t border-b border-emerald-900/10 bg-white/40">
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="glass-card p-6 rounded-2xl">
                     <p class="font-serif text-4xl font-bold text-accent mb-2">6 лет</p>
-                    <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Опыта работы</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Опыта работы</p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl">
                     <p class="font-serif text-4xl font-bold text-accent mb-2">3 книги</p>
-                    <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Авторских произведения</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Авторских произведения</p>
                 </div>
                 <div class="glass-card p-6 rounded-2xl">
                     <p class="font-serif text-4xl font-bold text-accent mb-2">100+ млн</p>
-                    <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Открученного бюджета в рекламе</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Открученного бюджета в рекламе</p>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-24 px-6 border-t border-emerald-950/40">
+        <section id="about" class="py-24 px-6 border-t border-emerald-900/10">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
                         <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Биография & История
                     </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-100 mb-4">
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
                         Обо мне
                     </h2>
                 </div>
 
                 <div class="glass-card p-8 sm:p-12 rounded-3xl relative">
-                    <div class="absolute -top-6 -left-6 text-accent/20 font-serif text-8xl select-none pointer-events-none">“</div>
-                    <p class="text-base sm:text-xl font-light text-slate-200 leading-relaxed relative z-10 text-center sm:text-left">
+                    <div class="absolute -top-6 -left-6 text-accent/15 font-serif text-8xl select-none pointer-events-none">“</div>
+                    <p class="text-base sm:text-xl font-light text-slate-700 leading-relaxed relative z-10 text-center sm:text-left">
                         Привет! Я Василина. Родилась и выросла в атмосферном Красноярске, прожила в Екатеринбурге и уехала в Сербию, получаю образование философа, сегодня моя профессиональная деятельность охватывает удаленные международные проекты. За плечами — 6 лет опыта в influence-маркетинге. Я прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний. Работала с компаниями из различных ниш: от e-commerce, fashion и бьюти-брендов до технологических стартапов.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-24 px-6 border-t border-emerald-950/40 bg-cardbg/30">
+        <section id="projects" class="py-24 px-6 border-t border-emerald-900/10 bg-white/30">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
                         <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Экспертиза & Проекты
                     </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-100 mb-4">
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
                         Чем я занимаюсь
                     </h2>
-                    <p class="text-slate-400 font-light leading-relaxed">
+                    <p class="text-slate-600 font-light leading-relaxed">
                         Мой опыт охватывает полный цикл работы с блогерами и создание вирусного контента.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <div class="glass-card p-8 rounded-2xl relative group transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-darkbg transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
                             <i data-lucide="megaphone" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-slate-100 mb-3">Influence-маркетинг</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3">Influence-маркетинг</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
                             Разработка стратегий продвижения брендов через блогеров на платформах YouTube, Telegram, Instagram, TikTok, MAX, Дзен, ВКонтакте с полным контролем ROI и CPC.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">Стратегия</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">ROI & CPC</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">Мультиплатформа</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Стратегия</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">ROI & CPC</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Мультиплатформа</span>
                         </div>
                     </div>
 
                     <div class="glass-card p-8 rounded-2xl relative group transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-darkbg transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
                             <i data-lucide="building-2" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-slate-100 mb-3">Работа с брендами</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3">Работа с брендами</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
                             Опыт сотрудничества с различными компаниями (от локальных стартапов до федеральных брендов).
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">Стартапы</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">Федеральные бренды</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">Контракты</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Стартапы</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Федеральные бренды</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Контракты</span>
                         </div>
                     </div>
 
                     <div class="glass-card p-8 rounded-2xl relative group transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-darkbg transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
                             <i data-lucide="video" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold text-slate-100 mb-3">UGC & Контент-направление</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-3">UGC & Контент-направление</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-light">
                             Создание ТЗ для пользовательского контента (UGC), организация съемок.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">UGC</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-950/60 text-emerald-200">ТЗ & Съемки</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">UGC</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">ТЗ & Съемки</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="hobbies" class="py-24 px-6 border-t border-emerald-950/40">
+        <section id="hobbies" class="py-24 px-6 border-t border-emerald-900/10">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
                         <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Вдохновение
                     </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-100 mb-4">
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
                         Мои хобби & увлечения
                     </h2>
-                    <p class="text-slate-400 font-light">
+                    <p class="text-slate-600 font-light">
                         То, что подпитывает мою креативность, дает силы для новых проектов и вдохновляет на написание историй.
                     </p>
                 </div>
@@ -241,34 +243,34 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
                         <i data-lucide="feather" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-slate-200">Dark Romance & Художественная литература</span>
+                        <span class="text-sm font-medium text-slate-700">Dark Romance & Художественная литература</span>
                     </div>
                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
                         <i data-lucide="palette" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-slate-200">AI Art & Визуальные концепты</span>
+                        <span class="text-sm font-medium text-slate-700">AI Art & Визуальные концепты</span>
                     </div>
                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
                         <i data-lucide="compass" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-slate-200">Путешествия & новые места</span>
+                        <span class="text-sm font-medium text-slate-700">Путешествия & новые места</span>
                     </div>
                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
                         <i data-lucide="trophy" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-slate-200">Хоккей</span>
+                        <span class="text-sm font-medium text-slate-700">Хоккей</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="books" class="py-24 px-6 border-t border-emerald-950/40 bg-cardbg/30">
+        <section id="books" class="py-24 px-6 border-t border-emerald-900/10 bg-white/30">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
                         <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Писательство
                     </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-100 mb-4">
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
                         Мои книги
                     </h2>
-                    <p class="text-slate-400 font-light">
+                    <p class="text-slate-600 font-light">
                         Изданные произведения под авторским именем <strong>Лина Кривенко</strong>. Погружение в сложные эмоции, атмосферные миры и человеческие судьбы.
                     </p>
                 </div>
@@ -276,24 +278,18 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <!-- Book 1: Vesper -->
                     <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="h-72 bg-gradient-to-br from-emerald-950 via-neutral-950 to-stone-900 relative overflow-hidden flex flex-col items-center justify-center p-6 border-b border-emerald-900/30 text-center">
-                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#95b8a6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                            <div class="w-16 h-16 rounded-full border border-accent/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500 bg-darkbg/60">
-                                <i data-lucide="moon" class="w-8 h-8 text-accent"></i>
-                            </div>
-                            <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold mb-1">Лина Кривенко</span>
-                            <span class="font-serif text-2xl font-bold text-slate-100 tracking-wider">VESPER</span>
-                            <div class="absolute bottom-3 text-[10px] text-slate-500 tracking-widest uppercase">Litres Edition</div>
+                        <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-emerald-900/10">
+                            <img src="assets/img/vesper.jpg" alt="VESPER" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between">
                             <div>
                                 <span class="text-xs uppercase tracking-widest text-accent font-semibold">Роман / Драма</span>
-                                <h3 class="font-serif text-xl font-bold text-slate-100 mt-1 mb-2">VESPER</h3>
-                                <p class="text-slate-400 text-xs font-light leading-relaxed mb-6">
+                                <h3 class="font-serif text-xl font-bold text-slate-900 mt-1 mb-2">VESPER</h3>
+                                <p class="text-slate-600 text-xs font-light leading-relaxed mb-6">
                                     История о поиске света в темноте, переплетении человеческих судеб и неизбежности выбора.
                                 </p>
                             </div>
-                            <a href="https://www.litres.ru/74322623/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-darkbg transition-all">
+                            <a href="https://www.litres.ru/74322623/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all">
                                 Читать на ЛитРес <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
@@ -301,24 +297,18 @@
 
                     <!-- Book 2: Vinculum -->
                     <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="h-72 bg-gradient-to-br from-zinc-950 via-emerald-950 to-neutral-900 relative overflow-hidden flex flex-col items-center justify-center p-6 border-b border-emerald-900/30 text-center">
-                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#95b8a6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                            <div class="w-16 h-16 rounded-full border border-accent/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500 bg-darkbg/60">
-                                <i data-lucide="link" class="w-8 h-8 text-accent"></i>
-                            </div>
-                            <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold mb-1">Лина Кривенко</span>
-                            <span class="font-serif text-2xl font-bold text-slate-100 tracking-wider">VINCULUM</span>
-                            <div class="absolute bottom-3 text-[10px] text-slate-500 tracking-widest uppercase">Litres Edition</div>
+                        <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-emerald-900/10">
+                            <img src="assets/img/vinculum.jpg" alt="VINCULUM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between">
                             <div>
                                 <span class="text-xs uppercase tracking-widest text-accent font-semibold">Триллер / Психология</span>
-                                <h3 class="font-serif text-xl font-bold text-slate-100 mt-1 mb-2">VINCULUM</h3>
-                                <p class="text-slate-400 text-xs font-light leading-relaxed mb-6">
+                                <h3 class="font-serif text-xl font-bold text-slate-900 mt-1 mb-2">VINCULUM</h3>
+                                <p class="text-slate-600 text-xs font-light leading-relaxed mb-6">
                                     Неразрывные связи, ментальные ловушки и расплата за тайны прошлого.
                                 </p>
                             </div>
-                            <a href="https://www.litres.ru/74523363/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-darkbg transition-all">
+                            <a href="https://www.litres.ru/74523363/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all">
                                 Читать на ЛитРес <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
@@ -326,24 +316,18 @@
 
                     <!-- Book 3: Venezia Nera -->
                     <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="h-72 bg-gradient-to-br from-stone-950 via-emerald-950 to-zinc-950 relative overflow-hidden flex flex-col items-center justify-center p-6 border-b border-emerald-900/30 text-center">
-                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#95b8a6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                            <div class="w-16 h-16 rounded-full border border-accent/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500 bg-darkbg/60">
-                                <i data-lucide="compass" class="w-8 h-8 text-accent"></i>
-                            </div>
-                            <span class="text-[10px] uppercase tracking-[0.3em] text-accent font-semibold mb-1">Лина Кривенко</span>
-                            <span class="font-serif text-2xl font-bold text-slate-100 tracking-wider">VENEZIA NERA</span>
-                            <div class="absolute bottom-3 text-[10px] text-slate-500 tracking-widest uppercase">Litres Edition</div>
+                        <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-emerald-900/10">
+                            <img src="assets/img/venezianera.jpg" alt="VENEZIA NERA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between">
                             <div>
                                 <span class="text-xs uppercase tracking-widest text-accent font-semibold">Нуар / Детектив</span>
-                                <h3 class="font-serif text-xl font-bold text-slate-100 mt-1 mb-2">VENEZIA NERA</h3>
-                                <p class="text-slate-400 text-xs font-light leading-relaxed mb-6">
+                                <h3 class="font-serif text-xl font-bold text-slate-900 mt-1 mb-2">VENEZIA NERA</h3>
+                                <p class="text-slate-600 text-xs font-light leading-relaxed mb-6">
                                     Мрачная изнанка каналов старой Венеции, где маски скрывают истинные лица.
                                 </p>
                             </div>
-                            <a href="https://www.litres.ru/74321349/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-darkbg transition-all">
+                            <a href="https://www.litres.ru/74321349/" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all">
                                 Читать на ЛитРес <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
@@ -352,27 +336,27 @@
             </div>
         </section>
 
-        <section id="contacts" class="py-24 px-6 border-t border-emerald-950/40">
+        <section id="contacts" class="py-24 px-6 border-t border-emerald-900/10">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
                     <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> На связи
                 </div>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-100 mb-4">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
                     Давайте создадим что-то прекрасное вместе
                 </h2>
-                <p class="text-slate-400 font-light max-w-xl mx-auto mb-12">
+                <p class="text-slate-600 font-light max-w-xl mx-auto mb-12">
                     Открыта к предложениям по influence-маркетингу, рекламным кампаниям, сотрудничеству с брендами и творческим коллаборациям.
                 </p>
 
-                <div class="inline-flex items-center gap-8 text-slate-300">
-                    <a href="https://t.me/vsnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all" title="Telegram"><i data-lucide="send" class="w-5 h-5"></i></a>
-                    <a href="https://www.litres.ru/author/lina-krivenko-34026289/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all" title="Litres Author Profile"><i data-lucide="book" class="w-5 h-5"></i></a>
+                <div class="inline-flex items-center gap-8 text-slate-700">
+                    <a href="https://t.me/vsnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Telegram"><i data-lucide="send" class="w-5 h-5"></i></a>
+                    <a href="https://www.litres.ru/author/lina-krivenko-34026289/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Litres Author Profile"><i data-lucide="book" class="w-5 h-5"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 px-6 border-t border-emerald-950/40 bg-darkbg text-center text-xs text-slate-500">
+    <footer class="py-12 px-6 border-t border-emerald-900/10 bg-[#eaf0ec] text-center text-xs text-slate-600">
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p>&copy; 2026 Василина Кривенко. Все права защищены.</p>
             <p class="font-light">Influence-менеджер & Писательница</p>
