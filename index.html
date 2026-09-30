@@ -151,7 +151,7 @@
             </div>
         </section>
 
-        <!-- Секция Обо мне (расширенная карточка с новым текстом) -->
+        <!-- Секция Обо мне -->
         <section id="about" class="py-24 px-6 border-t border-[#1E382B]/10">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
@@ -367,7 +367,7 @@
             </div>
         </section>
 
-        <!-- Контакты с иконками Telegram, Instagram и Литрес -->
+        <!-- Контакты с иконками Telegram, Instagram и Литрес (заменено на надежный SVG для Instagram) -->
         <section id="contacts" class="py-24 px-6 border-t border-[#1E382B]/10">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
@@ -381,8 +381,15 @@
                 </p>
 
                 <div class="inline-flex items-center gap-6 text-accent">
+                    <!-- Telegram -->
                     <a href="https://t.me/vsnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Telegram"><i data-lucide="send" class="w-5 h-5"></i></a>
-                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    
+                    <!-- Instagram (надежный встроенный SVG) -->
+                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Instagram">
+                        <svg class="w-5 h-5 fill-none stroke-current stroke-[2]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+
+                    <!-- Litres -->
                     <a href="https://www.litres.ru/author/lina-krivenko-34026289/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Litres Author Profile"><i data-lucide="book" class="w-5 h-5"></i></a>
                 </div>
             </div>
