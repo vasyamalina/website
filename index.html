@@ -92,7 +92,7 @@
                 <div class="relative">
                     <button id="lang-menu-btn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent/40 bg-white/60 text-xs font-semibold text-accent hover:bg-white transition-all shadow-sm focus:outline-none">
                         <span id="current-flag" class="flex items-center">
-                            <svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="6"/><rect fill="#0039a6" width="9" height="4"/><rect fill="#d52b1e" width="9" height="2"/></svg>
+                            <svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="2"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg>
                         </span>
                         <span id="current-lang-text">Русский</span>
                         <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
@@ -100,7 +100,7 @@
                     <!-- Выпадающее окно -->
                     <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-white border border-[#1E382B]/15 rounded-xl shadow-xl overflow-hidden z-50">
                         <button onclick="setLanguage('ru')" class="w-full flex items-center gap-3 px-3.5 py-2.5 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
-                            <svg class="w-5 h-3.5 rounded-sm shadow-sm flex-shrink-0" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="6"/><rect fill="#0039a6" width="9" height="4"/><rect fill="#d52b1e" width="9" height="2"/></svg> Русский
+                            <svg class="w-5 h-3.5 rounded-sm shadow-sm flex-shrink-0" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="2"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg> Русский
                         </button>
                         <button onclick="setLanguage('en')" class="w-full flex items-center gap-3 px-3.5 py-2.5 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
                             <svg class="w-5 h-3.5 rounded-sm shadow-sm flex-shrink-0" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v-15 h-30 z h-30 v-15 z v15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg> English
@@ -442,8 +442,8 @@
             });
         });
 
-        // Шаблоны SVG для флагов
-        const flagRuSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="6"/><rect fill="#0039a6" width="9" height="4"/><rect fill="#d52b1e" width="9" height="2"/></svg>';
+        // Шаблоны SVG для флагов (с правильным порядком цветов РФ: белый, синий, красный)
+        const flagRuSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="2"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg>';
         const flagGbSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v-15 h-30 z h-30 v-15 z v15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>';
 
         // Логика выпадающего меню
