@@ -10,12 +10,11 @@
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#f3f6f4',      /* Светлый пастельно-фисташковый фон */
-                        cardbg: '#ffffff',      /* Чисто белый для карточек */
-                        cardhover: '#e8efe9',   /* Легкое уплотнение при наведении */
-                        accent: '#4a6b5d',      /* Глубокий благородный шалфей для акцентов и текстов */
-                        accenthover: '#3b5549', /* Темный шалфей при наведении */
-                        mutedtext: '#5c6b63',   /* Приглушенный текст */
+                        darkbg: '#f4f7f5',      /* Теплый пастельный мятно-кремовый фон */
+                        cardbg: '#ffffff',      /* Чисто белые карточки */
+                        cardhover: '#edf2ee',   
+                        accent: '#446353',      /* Благородный глубокий шалфей для текста и кнопок */
+                        accenthover: '#354f42', 
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -31,8 +30,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
-            background-color: #f3f6f4;
-            color: #2c3631;
+            background-color: #f4f7f5;
+            color: #26332b;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
@@ -40,22 +39,30 @@
             font-family: 'Playfair Display', serif;
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(74, 107, 93, 0.12);
-            box-shadow: 0 10px 30px -10px rgba(74, 107, 93, 0.05);
+            border: 1px solid rgba(68, 99, 83, 0.12);
+            box-shadow: 0 10px 30px -10px rgba(68, 99, 83, 0.06);
         }
         .glass-card:hover {
-            border-color: rgba(74, 107, 93, 0.3);
-            box-shadow: 0 15px 35px -10px rgba(74, 107, 93, 0.1);
+            border-color: rgba(68, 99, 83, 0.3);
+            box-shadow: 0 15px 35px -10px rgba(68, 99, 83, 0.12);
         }
         .glow-effect {
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(149, 184, 166, 0.2) 0%, rgba(243, 246, 244, 0) 70%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 196, 181, 0.25) 0%, rgba(244, 247, 245, 0) 70%);
             pointer-events: none;
             z-index: 0;
+        }
+        .profile-squircle {
+            border-radius: 2rem;
+            object-fit: cover;
+            aspect-ratio: 3 / 4;
+            width: 100%;
+            max-width: 280px;
+            box-shadow: 0 15px 35px -10px rgba(68, 99, 83, 0.18);
         }
     </style>
 </head>
@@ -64,7 +71,7 @@
     <div class="glow-effect top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="glow-effect top-2/3 right-10"></div>
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#f3f6f4]/85 backdrop-blur-md border-b border-emerald-900/10">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#f4f7f5]/90 backdrop-blur-md border-b border-emerald-900/10">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="font-serif text-xl tracking-wide text-slate-900 font-bold flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-accent"></span>
@@ -127,7 +134,7 @@
             </div>
         </section>
 
-        <section class="py-12 px-6 border-t border-b border-emerald-900/10 bg-white/40">
+        <section class="py-12 px-6 border-t border-b border-emerald-900/10 bg-white/50">
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="glass-card p-6 rounded-2xl">
                     <p class="font-serif text-4xl font-bold text-accent mb-2">6 лет</p>
@@ -155,16 +162,21 @@
                     </h2>
                 </div>
 
-                <div class="glass-card p-8 sm:p-12 rounded-3xl relative">
-                    <div class="absolute -top-6 -left-6 text-accent/15 font-serif text-8xl select-none pointer-events-none">“</div>
-                    <p class="text-base sm:text-xl font-light text-slate-700 leading-relaxed relative z-10 text-center sm:text-left">
-                        Привет! Я Василина. Родилась и выросла в атмосферном Красноярске, прожила в Екатеринбурге и уехала в Сербию, получаю образование философа, сегодня моя профессиональная деятельность охватывает удаленные международные проекты. За плечами — 6 лет опыта в influence-маркетинге. Я прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний. Работала с компаниями из различных ниш: от e-commerce, fashion и бьюти-брендов до технологических стартапов.
-                    </p>
+                <div class="glass-card p-8 sm:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5 flex justify-center">
+                        <img src="assets/img/photomoe.jpg" alt="Василина Кривенко" class="profile-squircle">
+                    </div>
+                    <div class="md:col-span-7 relative">
+                        <div class="absolute -top-6 -left-6 text-accent/15 font-serif text-8xl select-none pointer-events-none hidden sm:block">“</div>
+                        <p class="text-base sm:text-lg font-light text-slate-700 leading-relaxed relative z-10">
+                            Привет! Я Василина. Родилась и выросла в атмосферном Красноярске, прожила в Екатеринбурге и уехала в Сербию, получаю образование философа, сегодня моя профессиональная деятельность охватывает удаленные международные проекты. За плечами — 6 лет опыта в influence-маркетинге. Я прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний. Работала с компаниями из различных ниш: от e-commerce, fashion и бьюти-брендов до технологических стартапов.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-24 px-6 border-t border-emerald-900/10 bg-white/30">
+        <section id="projects" class="py-24 px-6 border-t border-emerald-900/10 bg-white/40">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
@@ -188,9 +200,9 @@
                             Разработка стратегий продвижения брендов через блогеров на платформах YouTube, Telegram, Instagram, TikTok, MAX, Дзен, ВКонтакте с полным контролем ROI и CPC.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Стратегия</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">ROI & CPC</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Мультиплатформа</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">Стратегия</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">ROI & CPC</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">Мультиплатформа</span>
                         </div>
                     </div>
 
@@ -203,9 +215,9 @@
                             Опыт сотрудничества с различными компаниями (от локальных стартапов до федеральных брендов).
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Стартапы</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Федеральные бренды</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">Контракты</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">Стартапы</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">Федеральные бренды</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">Контракты</span>
                         </div>
                     </div>
 
@@ -218,8 +230,8 @@
                             Создание ТЗ для пользовательского контента (UGC), организация съемок.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">UGC</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e4ebe6] text-accent font-medium">ТЗ & Съемки</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">UGC</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#e2ebe4] text-accent font-medium">ТЗ & Съемки</span>
                         </div>
                     </div>
                 </div>
@@ -261,7 +273,7 @@
             </div>
         </section>
 
-        <section id="books" class="py-24 px-6 border-t border-emerald-900/10 bg-white/30">
+        <section id="books" class="py-24 px-6 border-t border-emerald-900/10 bg-white/40">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
@@ -279,7 +291,7 @@
                     <!-- Book 1: Vesper -->
                     <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
                         <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-emerald-900/10">
-                            <img src="assets/img/vesper.jpg" alt="VESPER" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/img/photo_2026-07-29_03-29-28.jpg" alt="VESPER" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6 flex flex-col flex-grow justify-between">
                             <div>
@@ -356,7 +368,7 @@
         </section>
     </main>
 
-    <footer class="py-12 px-6 border-t border-emerald-900/10 bg-[#eaf0ec] text-center text-xs text-slate-600">
+    <footer class="py-12 px-6 border-t border-emerald-900/10 bg-[#e7efe9] text-center text-xs text-slate-600">
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <p>&copy; 2026 Василина Кривенко. Все права защищены.</p>
             <p class="font-light">Influence-менеджер & Писательница</p>
