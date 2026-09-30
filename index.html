@@ -10,10 +10,10 @@
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#CCD5CB',      /* Ваш точный пастельно-шалфейный цвет фона */
-                        cardbg: '#FFFFFF',      /* Чисто белые карточки для контраста */
+                        darkbg: '#CCD5CB',      /* Пастельно-шалфейный цвет фона */
+                        cardbg: '#FFFFFF',      /* Чисто белые карточки */
                         cardhover: '#E2E8E4',   
-                        accent: '#1E382B',      /* Глубокий темно-зеленый цвет для акцентов и текстов */
+                        accent: '#1E382B',      /* Глубокий темно-зеленый текст */
                         accenthover: '#13241B', 
                     },
                     fontFamily: {
@@ -151,8 +151,9 @@
             </div>
         </section>
 
+        <!-- Секция Обо мне (расширенная карточка с новым текстом) -->
         <section id="about" class="py-24 px-6 border-t border-[#1E382B]/10">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
                         <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Биография & История
@@ -162,14 +163,32 @@
                     </h2>
                 </div>
 
-                <div class="glass-card p-8 sm:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                    <div class="md:col-span-5 flex justify-center">
+                <div class="glass-card p-8 sm:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+                    <div class="md:col-span-4 flex justify-center">
                         <img src="assets/img/photomoe.jpg" alt="Василина Кривенко" class="profile-squircle">
                     </div>
-                    <div class="md:col-span-7 relative">
+                    <div class="md:col-span-8 relative space-y-4">
                         <div class="absolute -top-6 -left-6 text-accent/15 font-serif text-8xl select-none pointer-events-none hidden sm:block">“</div>
                         <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
-                            Привет! Я Василина. Родилась и выросла в атмосферном Красноярске, прожила в Екатеринбурге и уехала в Сербию, получаю образование философа, сегодня моя профессиональная деятельность охватывает удаленные международные проекты. За плечами — 6 лет опыта в influence-маркетинге. Я прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний. Работала с компаниями из различных ниш: от e-commerce, fashion и бьюти-брендов до технологических стартапов.
+                            Привет! Я Василина.
+                        </p>
+                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
+                            Моя история начинается в атмосферном Красноярске. Потом был Екатеринбург, а сегодня я живу в Сербии.
+                        </p>
+                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
+                            Сейчас получаю образование в области философии и работаю с удалёнными международными проектами.
+                        </p>
+                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
+                            В influence-маркетинге я уже 6 лет. За это время прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний — от первых коммуникаций с авторами до разработки и реализации комплексных influencer-стратегий.
+                        </p>
+                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
+                            Работала с компаниями из самых разных сфер: e-commerce, fashion, beauty, technology и стартапами.
+                        </p>
+                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
+                            Мне интересно находить баланс между креативом, бизнес-задачами и живой коммуникацией с аудиторией — и превращать influence из просто рекламного инструмента в работающий элемент бренда.
+                        </p>
+                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10">
+                            Сегодня я совмещаю профессиональный опыт, интерес к философии и любовь к международной среде — и продолжаю собирать собственную оптику на маркетинг, людей и коммуникации.
                         </p>
                     </div>
                 </div>
@@ -348,6 +367,7 @@
             </div>
         </section>
 
+        <!-- Контакты с иконками Telegram, Instagram и Литрес -->
         <section id="contacts" class="py-24 px-6 border-t border-[#1E382B]/10">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
@@ -360,8 +380,9 @@
                     Открыта к предложениям по influence-маркетингу, рекламным кампаниям, сотрудничеству с брендами и творческим коллаборациям.
                 </p>
 
-                <div class="inline-flex items-center gap-8 text-accent">
+                <div class="inline-flex items-center gap-6 text-accent">
                     <a href="https://t.me/vsnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Telegram"><i data-lucide="send" class="w-5 h-5"></i></a>
+                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
                     <a href="https://www.litres.ru/author/lina-krivenko-34026289/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Litres Author Profile"><i data-lucide="book" class="w-5 h-5"></i></a>
                 </div>
             </div>
