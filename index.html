@@ -19,15 +19,6 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif']
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
-                    },
-                    animation: {
-                        marquee: 'marquee 35s linear infinite',
                     }
                 }
             }
@@ -82,30 +73,29 @@
             opacity: 1;
             pointer-events: auto;
         }
-        /* Бегущая строка */
+        /* Стили для движущейся бегущей строки */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
             position: relative;
             width: 100%;
+            display: flex;
         }
         .marquee-track {
-            display: inline-flex;
-            animation: marquee 35s linear infinite;
+            display: flex;
+            gap: 1.5rem;
+            will-change: transform;
         }
-        .marquee-container:hover .marquee-track {
-            animation-play-state: paused;
-        }
-        /* Стили для логотипов брендов */
         .brand-logo-item {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 0.5rem 1.5rem;
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(30, 56, 43, 0.1);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(30, 56, 43, 0.12);
             border-radius: 1rem;
             height: 64px;
+            flex-shrink: 0;
             transition: all 0.3s ease;
         }
         .brand-logo-item:hover {
@@ -117,7 +107,7 @@
             max-height: 36px;
             width: auto;
             object-fit: contain;
-            filter: grayscale(100%) opacity(80%);
+            filter: grayscale(100%) opacity(85%);
             transition: filter 0.3s ease;
         }
         .brand-logo-item:hover img {
@@ -335,34 +325,22 @@
                     </div>
                 </div>
 
-                <!-- БЕГУЩАЯ СТРОКА С ЛОГОТИПАМИ БРЕНДОВ -->
-                <div class="py-6 border-t border-b border-[#1E382B]/10 bg-white/40 rounded-2xl shadow-sm">
+                <!-- БЕГУЩАЯ ДВИЖУЩАЯСЯ СТРОКА С ЛОГОТИПАМИ -->
+                <div class="py-6 border-t border-b border-[#1E382B]/10 bg-white/40 rounded-2xl shadow-sm overflow-hidden">
                     <p class="text-center text-xs uppercase tracking-widest text-accent/60 font-semibold mb-6" data-ru="Бренды, с которыми я работала" data-en="Brands I've worked with">Бренды, с которыми я работала</p>
-                    <div class="marquee-container">
-                        <div class="marquee-track flex items-center gap-6">
-                            <!-- Первый набор логотипов в нужном порядке -->
-                            <div class="brand-logo-item"><img src="assets/img/mixit.jpg" alt="MIXIT"></div>
-                            <div class="brand-logo-item"><img src="assets/img/riche.png" alt="RICHE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/theact.jpg" alt="THE ACT"></div>
-                            <div class="brand-logo-item"><img src="assets/img/toptop.jpg" alt="TOPTOP"></div>
-                            <div class="brand-logo-item"><img src="assets/img/voishe.png" alt="VOISHE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/cheelee.png" alt="CHEELEE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/demiand.png" alt="DEMIAND"></div>
-                            <div class="brand-logo-item"><img src="assets/img/felfri.png" alt="FELFRI"></div>
-                            <div class="brand-logo-item"><img src="assets/img/graymoss.png" alt="GRAY MOSS"></div>
-                            <div class="brand-logo-item"><img src="assets/img/twoself.jpg" alt="TWOSELF"></div>
-
-                            <!-- Повтор для бесшовной анимации -->
-                            <div class="brand-logo-item"><img src="assets/img/mixit.jpg" alt="MIXIT"></div>
-                            <div class="brand-logo-item"><img src="assets/img/riche.png" alt="RICHE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/theact.jpg" alt="THE ACT"></div>
-                            <div class="brand-logo-item"><img src="assets/img/toptop.jpg" alt="TOPTOP"></div>
-                            <div class="brand-logo-item"><img src="assets/img/voishe.png" alt="VOISHE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/cheelee.png" alt="CHEELEE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/demiand.png" alt="DEMIAND"></div>
-                            <div class="brand-logo-item"><img src="assets/img/felfri.png" alt="FELFRI"></div>
-                            <div class="brand-logo-item"><img src="assets/img/graymoss.png" alt="GRAY MOSS"></div>
-                            <div class="brand-logo-item"><img src="assets/img/twoself.jpg" alt="TWOSELF"></div>
+                    <div class="marquee-container" id="marquee">
+                        <div class="marquee-track" id="marquee-track">
+                            <!-- Бренды с путями к папке assets/img/brands/ -->
+                            <div class="brand-logo-item"><img src="assets/img/brands/mixit.jpg" alt="MIXIT"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/riche.png" alt="RICHE"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/theact.jpg" alt="THE ACT"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/toptop.jpg" alt="TOPTOP"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/voishe.png" alt="VOISHE"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/cheelee.png" alt="CHEELEE"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/demiand.png" alt="DEMIAND"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/felfri.png" alt="FELFRI"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/graymoss.png" alt="GRAY MOSS"></div>
+                            <div class="brand-logo-item"><img src="assets/img/brands/twoself.jpg" alt="TWOSELF"></div>
                         </div>
                     </div>
                 </div>
@@ -398,7 +376,7 @@
                     </div>
                     <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
                         <i data-lucide="trophy" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-accent" data-ru="Хоккей" data-en="Хоккей">Хоккей</span>
+                        <span class="text-sm font-medium text-accent" data-ru="Хоккей" data-en="Hockey">Хоккей</span>
                     </div>
                 </div>
             </div>
@@ -592,6 +570,28 @@
                 behavior: 'smooth'
             });
         });
+
+        // Плавная бесконечная бегущая строка на JavaScript
+        const track = document.getElementById('marquee-track');
+        if (track) {
+            // Клонируем элементы внутри трека, чтобы строка была бесконечной
+            track.innerHTML += track.innerHTML;
+            
+            let scrollPosition = 0;
+            const speed = 0.6; // Скорость движения
+
+            function animateMarquee() {
+                scrollPosition += speed;
+                // Когда прошли ровно половину ширины (первый набор элементов), сбрасыем в 0 для бесконечного цикла
+                if (scrollPosition >= track.scrollWidth / 2) {
+                    scrollPosition = 0;
+                }
+                track.style.transform = `translateX(-${scrollPosition}px)`;
+                requestAnimationFrame(animateMarquee);
+            }
+
+            requestAnimationFrame(animateMarquee);
+        }
     </script>
 </body>
 </html>
