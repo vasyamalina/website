@@ -83,18 +83,19 @@
         }
         .marquee-track {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.25rem;
             will-change: transform;
         }
         .brand-logo-item {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem 1.5rem;
-            background: rgba(255, 255, 255, 0.7);
+            padding: 0.4rem 1.25rem;
+            background: rgba(255, 255, 255, 0.85);
             border: 1px solid rgba(30, 56, 43, 0.12);
-            border-radius: 1rem;
-            height: 64px;
+            border-radius: 0.85rem;
+            height: 52px;
+            min-width: 130px;
             flex-shrink: 0;
             transition: all 0.3s ease;
         }
@@ -104,7 +105,8 @@
             transform: translateY(-2px);
         }
         .brand-logo-item img {
-            max-height: 36px;
+            max-height: 24px;
+            max-width: 100px;
             width: auto;
             object-fit: contain;
             filter: grayscale(100%) opacity(85%);
@@ -330,7 +332,7 @@
                     <p class="text-center text-xs uppercase tracking-widest text-accent/60 font-semibold mb-6" data-ru="Бренды, с которыми я работала" data-en="Brands I've worked with">Бренды, с которыми я работала</p>
                     <div class="marquee-container" id="marquee">
                         <div class="marquee-track" id="marquee-track">
-                            <!-- Бренды с путями к папке assets/img/brands/ -->
+                            <!-- Бренды с выровненным размером логотипов -->
                             <div class="brand-logo-item"><img src="assets/img/brands/mixit.jpg" alt="MIXIT"></div>
                             <div class="brand-logo-item"><img src="assets/img/brands/riche.png" alt="RICHE"></div>
                             <div class="brand-logo-item"><img src="assets/img/brands/theact.jpg" alt="THE ACT"></div>
@@ -516,7 +518,7 @@
             });
         });
 
-        // Флаги (РФ: белый, синий, красный)
+        // Флаги
         const flagRuSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="3"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg>';
         const flagGbSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v-15 h-30 z h-30 v-15 z v15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>';
 
@@ -571,18 +573,15 @@
             });
         });
 
-        // Плавная бесконечная бегущая строка на JavaScript
+        // Бегущая строка (плавная анимация с дублированием элементов)
         const track = document.getElementById('marquee-track');
         if (track) {
-            // Клонируем элементы внутри трека, чтобы строка была бесконечной
-            track.innerHTML += track.innerHTML;
-            
+            track.innerHTML += track.innerHTML; // Дублируем для плавного цикла
             let scrollPosition = 0;
-            const speed = 0.6; // Скорость движения
+            const speed = 0.8; // Скорость движения
 
             function animateMarquee() {
                 scrollPosition += speed;
-                // Когда прошли ровно половину ширины (первый набор элементов), сбрасыем в 0 для бесконечного цикла
                 if (scrollPosition >= track.scrollWidth / 2) {
                     scrollPosition = 0;
                 }
