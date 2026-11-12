@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<script>(function(){try{if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
 <title>Работа — Василина Кривенко</title>
 <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -148,8 +148,8 @@ html[data-theme="dark"] .theme-toggle{border-color:#2E362C !important;color:#F2F
 function toggleTheme(){
   var html = document.documentElement;
   var isDark = html.getAttribute("data-theme") === "dark";
-  if (isDark) { html.removeAttribute("data-theme"); try{localStorage.setItem("theme","light")}catch(e){} }
-  else { html.setAttribute("data-theme","dark"); try{localStorage.setItem("theme","dark")}catch(e){} }
+  if (isDark) { html.removeAttribute("data-theme"); }
+  else { html.setAttribute("data-theme","dark"); }
   updateThemeIcon();
 }
 function updateThemeIcon(){
@@ -159,11 +159,9 @@ function updateThemeIcon(){
 updateThemeIcon();
 try{
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
-    if(!localStorage.getItem('theme')){
-      if (e.matches) { document.documentElement.setAttribute('data-theme','dark'); }
-      else { document.documentElement.removeAttribute('data-theme'); }
-      updateThemeIcon();
-    }
+    if (e.matches) { document.documentElement.setAttribute('data-theme','dark'); }
+    else { document.documentElement.removeAttribute('data-theme'); }
+    updateThemeIcon();
   });
 }catch(e){}
 </script>
