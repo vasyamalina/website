@@ -12,13 +12,26 @@ a{color:#D98B5F}a:hover{color:#E8A87A}
 @keyframes marq{to{transform:translateX(-50%)}}
 .marq{animation:marq 45s linear infinite}
 @media (prefers-reduced-motion:reduce){.marq{animation:none}}
+
+.nav-toggle{display:none;background:none;border:1px solid #3A2E22;color:#F2E8DA;width:40px;height:40px;border-radius:8px;font-size:18px;cursor:pointer;align-items:center;justify-content:center}
+@media (max-width:680px){
+header{position:relative}
+.nav-toggle{display:inline-flex !important}
+.site-nav{display:none !important;position:absolute;top:100%;left:0;right:0;background:#1B1613;flex-direction:column !important;align-items:flex-start !important;padding:16px 24px;gap:14px !important;border-top:1px solid #3A2E22;z-index:40}
+.site-nav.open{display:flex !important}
+}
+
+@media (max-width:680px){
+.hero-photo{order:-1 !important;margin-bottom:4px}
+}
 </style>
 </head>
 <body style="margin:0">
 <div style="background:#1B1613;color:#F2E8DA;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6">
 <header style="max-width:1160px;margin:0 auto;padding:24px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
 <a href="/" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(18px,4vw,22px);color:#F2E8DA;text-decoration:none">Василина Кривенко</a>
-<nav style="display:flex;flex-wrap:wrap;gap:8px 24px;font-size:15px;align-items:center">
+<button type="button" class="nav-toggle" onclick="document.querySelector('.site-nav').classList.toggle('open')" aria-label="Меню">☰</button>
+<nav class="site-nav" style="display:flex;flex-wrap:wrap;gap:8px 24px;font-size:15px;align-items:center">
 <a href="/" style="color:#F2E8DA;font-weight:500;text-decoration:none">Главная</a>
 <a href="/work" style="color:#CBB89E;text-decoration:none">Работа</a>
 <a href="/book" style="color:#CBB89E;text-decoration:none">Книги</a>
@@ -28,7 +41,7 @@ a{color:#D98B5F}a:hover{color:#E8A87A}
 </nav>
 </header>
 <section id="top" style="max-width:1160px;margin:0 auto;padding:64px 24px 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:48px;align-items:center">
-<div style="display:flex;flex-direction:column;gap:24px">
+<div class="hero-text" style="display:flex;flex-direction:column;gap:24px">
 <div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#D98B5F;font-weight:500">Influence-менеджер · писательница</div>
 <h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,9vw,52px);line-height:1.12">Строю рекламу у блогеров на цифрах, а не на удаче</h1>
 <p style="margin:0;font-size:19px;color:#CBB89E">6 лет работаю с блогерами: от закупки рекламы до руководства командой скаутов.</p>
@@ -37,7 +50,7 @@ a{color:#D98B5F}a:hover{color:#E8A87A}
 <a href="#contacts" style="background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:14px 26px;border-radius:8px;font-weight:500">Связаться</a>
 </div>
 </div>
-<div style="aspect-ratio:4/5;max-height:520px;width:100%;border-radius:16px;overflow:hidden"><img src="/assets/img/vasilina-hero.png" alt="Василина Кривенко" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div class="hero-photo" style="aspect-ratio:4/5;max-height:520px;width:100%;border-radius:16px;overflow:hidden"><img src="/assets/img/vasilina-hero.png" alt="Василина Кривенко" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 </section>
 <section style="background:#241D18;padding:48px 24px">
 <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:32px">
