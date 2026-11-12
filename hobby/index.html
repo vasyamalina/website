@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
 <title>Хобби — Василина Кривенко</title>
 <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -13,11 +14,11 @@
 body{margin:0}
 a{color:#4F7A52}a:hover{color:#3B5D3E}
 
-.nav-toggle{display:none;background:none;border:1px solid #CBD9C5;color:#1A1A1A;width:40px;height:40px;border-radius:8px;font-size:18px;cursor:pointer;align-items:center;justify-content:center}
+.nav-toggle{display:none;background:none;border:1px solid #9CB393;color:#1A1A1A;width:40px;height:40px;border-radius:8px;font-size:18px;cursor:pointer;align-items:center;justify-content:center}
 @media (max-width:680px){
 header{position:relative}
 .nav-toggle{display:inline-flex !important}
-.site-nav{display:none !important;position:absolute;top:100%;left:0;right:0;background:#CFDACC;flex-direction:column !important;align-items:flex-start !important;padding:16px 24px;gap:14px !important;border-top:1px solid #CBD9C5;z-index:40}
+.site-nav{display:none !important;position:absolute;top:100%;left:0;right:0;background:#CFDACC;flex-direction:column !important;align-items:flex-start !important;padding:16px 24px;gap:14px !important;border-top:1px solid #9CB393;z-index:40}
 .site-nav.open{display:flex !important}
 h1{font-size:clamp(24px,7vw,34px) !important}
 h2{font-size:clamp(20px,5.5vw,26px) !important}
@@ -26,6 +27,22 @@ p{font-size:15px !important}
 [style*="color:#333333"]{font-size:15px !important}
 [style*="color:#595959"]{font-size:15px !important}
 }
+
+html[data-theme="dark"] [style*="background:#CFDACC"]{background:#1E2420 !important}
+html[data-theme="dark"] [style*="background:#C4D2BF"]{background:#262F29 !important}
+html[data-theme="dark"] [style*="background:#B7C8B1"]{background:#141917 !important}
+html[data-theme="dark"] [style*="background:#4F7A52"]{background:#5C8F5F !important}
+html[data-theme="dark"] [style*="color:#1A1A1A"]{color:#F2F4F0 !important}
+html[data-theme="dark"] [style*="color:#333333"]{color:#D7DBD2 !important}
+html[data-theme="dark"] [style*="color:#595959"]{color:#AEB6A8 !important}
+html[data-theme="dark"] [style*="color:#8C8C8C"]{color:#7C8778 !important}
+html[data-theme="dark"] [style*="color:#4F7A52"]{color:#7FAE82 !important}
+html[data-theme="dark"] [style*="#9CB393"]{border-color:#2E362C !important}
+html[data-theme="dark"] [style*="#B7C9AF"]{border-color:#3A4537 !important}
+html[data-theme="dark"] a{color:#7FAE82}
+html[data-theme="dark"] a:hover{color:#9FC9A0}
+html[data-theme="dark"] .nav-toggle{border-color:#2E362C !important;color:#F2F4F0 !important}
+html[data-theme="dark"] .theme-toggle{border-color:#2E362C !important;color:#F2F4F0 !important}
 </style>
 </head>
 <body style="margin:0">
@@ -38,7 +55,8 @@ p{font-size:15px !important}
 <a href="/work" style="color:#595959;text-decoration:none">Работа</a>
 <a href="/book" style="color:#595959;text-decoration:none">Книги</a>
 <a href="/hobby" style="color:#1A1A1A;font-weight:500;text-decoration:none">Хобби</a>
-<a href="/en/hobby" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #CBD9C5;border-radius:20px;padding:5px 12px;color:#595959;text-decoration:none;font-size:14px"><img src="https://flagcdn.com/20x15/gb.png" srcset="https://flagcdn.com/40x30/gb.png 2x" width="20" height="15" alt="" style="border-radius:2px">EN</a>
+<a href="/en/hobby" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #9CB393;border-radius:20px;padding:5px 12px;color:#595959;text-decoration:none;font-size:14px"><img src="https://flagcdn.com/20x15/gb.png" srcset="https://flagcdn.com/40x30/gb.png 2x" width="20" height="15" alt="" style="border-radius:2px">EN</a>
+<button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid #9CB393;border-radius:20px;width:34px;height:34px;background:none;cursor:pointer;font-size:15px;color:#1A1A1A">🌙</button>
 <a href="/" style="background:#4F7A52;color:#FFFFFF;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:500">Связаться</a>
 </nav>
 </header>
@@ -49,21 +67,21 @@ p{font-size:15px !important}
 </section>
 <section style="max-width:1160px;margin:0 auto;padding:16px 24px 56px">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:20px">
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
 <div class="hcar" data-index="0" style="position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden"><div class="hcar-track" style="display:flex;height:100%;width:300%;transition:transform .4s ease"><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/hockey-2.jpg" alt="Хоккей" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/hockey-1.jpg" alt="Хоккей" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/hockey-3.jpg" alt="Хоккей" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><button type="button" onclick="hcarMove(this,-1)" aria-label="Предыдущее фото" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#1A1A1A;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1">‹</button><button type="button" onclick="hcarMove(this,1)" aria-label="Следующее фото" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#1A1A1A;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1">›</button><div style="position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px"><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:#1A1A1A"></span><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(242,232,218,.4)"></span><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(242,232,218,.4)"></span></div></div>
 <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:clamp(19px,4.5vw,26px)">Хоккей</h2>
 <p style="margin:0;color:#595959;font-size:16px">За 3 года жизни в Екатеринбурге прониклась хоккейным клубом «Автомобилист»: ходила на все матчи, держала абонемент на сезон, покупала атрибутику.</p>
 <p style="margin:0;color:#595959;font-size:16px">Коллекционирую шарфы — уже 9, из городов, где была.</p>
 <p style="margin:0;color:#595959;font-size:16px">Есть расписанное джерси с 21 автографом.</p>
 </div>
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
 <div class="hcar" data-index="0" style="position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden"><div class="hcar-track" style="display:flex;height:100%;width:300%;transition:transform .4s ease"><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/travel-1-paris.jpg" alt="Париж" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/travel-2-rome.jpg" alt="Рим" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/travel-3-cuba.jpg" alt="Куба" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><button type="button" onclick="hcarMove(this,-1)" aria-label="Предыдущее фото" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#1A1A1A;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1">‹</button><button type="button" onclick="hcarMove(this,1)" aria-label="Следующее фото" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#1A1A1A;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1">›</button><div style="position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px"><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:#1A1A1A"></span><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(242,232,218,.4)"></span><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(242,232,218,.4)"></span></div></div>
 <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:clamp(19px,4.5vw,26px)">Путешествия</h2>
 <p style="margin:0;color:#595959;font-size:16px">Посетила 15 стран, из них 6 визовых стран ЕС.</p>
 <p style="margin:0;color:#595959;font-size:16px">Люблю и пляжный отдых, и активное знакомство с достопримечательностями.</p>
 <p style="margin:0;color:#595959;font-size:16px">Мечтаю слетать в Австралию и Исландию.</p>
 </div>
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
 <div class="hcar" data-index="0" style="position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden"><div class="hcar-track" style="display:flex;height:100%;width:300%;transition:transform .4s ease"><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/reading-1-books.jpg" alt="Книги" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/reading-2-playlist.jpg" alt="Плейлист" style="width:100%;height:100%;object-fit:cover;display:block"></div><div style="flex:0 0 33.3333%;height:100%"><img src="/assets/img/hobbies/reading-3-concert.jpg" alt="Концерт The Neighbourhood" style="width:100%;height:100%;object-fit:cover;display:block"></div></div><button type="button" onclick="hcarMove(this,-1)" aria-label="Предыдущее фото" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#1A1A1A;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1">‹</button><button type="button" onclick="hcarMove(this,1)" aria-label="Следующее фото" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#1A1A1A;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:16px;line-height:1">›</button><div style="position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:6px"><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:#1A1A1A"></span><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(242,232,218,.4)"></span><span class="hcar-dot" style="width:6px;height:6px;border-radius:50%;background:rgba(242,232,218,.4)"></span></div></div>
 <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:clamp(19px,4.5vw,26px)">Dark romance и литература</h2>
 <p style="margin:0;color:#595959;font-size:16px">Любимые книги: «Бог злости» Рины Кент, «Дьявол носит чёрный» Л. Дж. Шэн, «Twisted Games» Аны Хуан.</p>
@@ -110,6 +128,18 @@ function hcarMove(btn, dir){
   window.addEventListener("resize", update);
   update();
 })();
+function toggleTheme(){
+  var html = document.documentElement;
+  var isDark = html.getAttribute("data-theme") === "dark";
+  if (isDark) { html.removeAttribute("data-theme"); try{localStorage.setItem("theme","light")}catch(e){} }
+  else { html.setAttribute("data-theme","dark"); try{localStorage.setItem("theme","dark")}catch(e){} }
+  updateThemeIcon();
+}
+function updateThemeIcon(){
+  var btn = document.querySelector(".theme-toggle");
+  if (btn) { btn.textContent = document.documentElement.getAttribute("data-theme") === "dark" ? "☀️" : "🌙"; }
+}
+updateThemeIcon();
 </script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
 <title>Работа — Василина Кривенко</title>
 <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -16,11 +17,11 @@ a{color:#4F7A52}a:hover{color:#3B5D3E}
 .marq{animation:marq 45s linear infinite}
 @media (prefers-reduced-motion:reduce){.marq{animation:none}}
 
-.nav-toggle{display:none;background:none;border:1px solid #CBD9C5;color:#1A1A1A;width:40px;height:40px;border-radius:8px;font-size:18px;cursor:pointer;align-items:center;justify-content:center}
+.nav-toggle{display:none;background:none;border:1px solid #9CB393;color:#1A1A1A;width:40px;height:40px;border-radius:8px;font-size:18px;cursor:pointer;align-items:center;justify-content:center}
 @media (max-width:680px){
 header{position:relative}
 .nav-toggle{display:inline-flex !important}
-.site-nav{display:none !important;position:absolute;top:100%;left:0;right:0;background:#CFDACC;flex-direction:column !important;align-items:flex-start !important;padding:16px 24px;gap:14px !important;border-top:1px solid #CBD9C5;z-index:40}
+.site-nav{display:none !important;position:absolute;top:100%;left:0;right:0;background:#CFDACC;flex-direction:column !important;align-items:flex-start !important;padding:16px 24px;gap:14px !important;border-top:1px solid #9CB393;z-index:40}
 .site-nav.open{display:flex !important}
 .contact-links{font-size:14px !important;gap:8px 18px !important}
 h1{font-size:clamp(24px,7vw,34px) !important}
@@ -31,6 +32,22 @@ blockquote{font-size:16px !important}
 [style*="color:#333333"]{font-size:15px !important}
 [style*="color:#595959"]{font-size:15px !important}
 }
+
+html[data-theme="dark"] [style*="background:#CFDACC"]{background:#1E2420 !important}
+html[data-theme="dark"] [style*="background:#C4D2BF"]{background:#262F29 !important}
+html[data-theme="dark"] [style*="background:#B7C8B1"]{background:#141917 !important}
+html[data-theme="dark"] [style*="background:#4F7A52"]{background:#5C8F5F !important}
+html[data-theme="dark"] [style*="color:#1A1A1A"]{color:#F2F4F0 !important}
+html[data-theme="dark"] [style*="color:#333333"]{color:#D7DBD2 !important}
+html[data-theme="dark"] [style*="color:#595959"]{color:#AEB6A8 !important}
+html[data-theme="dark"] [style*="color:#8C8C8C"]{color:#7C8778 !important}
+html[data-theme="dark"] [style*="color:#4F7A52"]{color:#7FAE82 !important}
+html[data-theme="dark"] [style*="#9CB393"]{border-color:#2E362C !important}
+html[data-theme="dark"] [style*="#B7C9AF"]{border-color:#3A4537 !important}
+html[data-theme="dark"] a{color:#7FAE82}
+html[data-theme="dark"] a:hover{color:#9FC9A0}
+html[data-theme="dark"] .nav-toggle{border-color:#2E362C !important;color:#F2F4F0 !important}
+html[data-theme="dark"] .theme-toggle{border-color:#2E362C !important;color:#F2F4F0 !important}
 </style>
 </head>
 <body style="margin:0">
@@ -43,7 +60,8 @@ blockquote{font-size:16px !important}
 <a href="/work" style="color:#1A1A1A;font-weight:500;text-decoration:none">Работа</a>
 <a href="/book" style="color:#595959;text-decoration:none">Книги</a>
 <a href="/hobby" style="color:#595959;text-decoration:none">Хобби</a>
-<a href="/en/work" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #CBD9C5;border-radius:20px;padding:5px 12px;color:#595959;text-decoration:none;font-size:14px"><img src="https://flagcdn.com/20x15/gb.png" srcset="https://flagcdn.com/40x30/gb.png 2x" width="20" height="15" alt="" style="border-radius:2px">EN</a>
+<a href="/en/work" style="display:inline-flex;align-items:center;gap:6px;border:1px solid #9CB393;border-radius:20px;padding:5px 12px;color:#595959;text-decoration:none;font-size:14px"><img src="https://flagcdn.com/20x15/gb.png" srcset="https://flagcdn.com/40x30/gb.png 2x" width="20" height="15" alt="" style="border-radius:2px">EN</a>
+<button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid #9CB393;border-radius:20px;width:34px;height:34px;background:none;cursor:pointer;font-size:15px;color:#1A1A1A">🌙</button>
 <a href="#contacts" style="background:#4F7A52;color:#FFFFFF;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:500">Связаться</a>
 </nav>
 </header>
@@ -55,21 +73,21 @@ blockquote{font-size:16px !important}
 
 <section style="max-width:1160px;margin:0 auto;padding:48px 24px 40px">
 <h2 style="margin:0 0 24px;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(24px,6.5vw,36px)">Мой путь</h2>
-<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #CBD9C5"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">С 12 лет</div><div style="flex:1 1 320px;color:#333333">Вела мемные паблики, покупала и продавала рекламу. Общая аудитория — 406 тыс. подписчиков.</div></div>
-<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #CBD9C5"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">С 14 лет</div><div style="flex:1 1 320px;color:#333333">Перешла в SMM-копирайтинг и таргетированную рекламу в Facebook.</div></div>
-<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #CBD9C5"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">Затем</div><div style="flex:1 1 320px;color:#333333">Полностью переключилась на influence. Начинала с косметики и бытовой техники.</div></div>
-<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #CBD9C5"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">Последние 6 лет</div><div style="flex:1 1 320px;color:#333333"><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px"><li><b style="font-weight:500">Реклама:</b> Занималась коммерческой и бартерной рекламой, полный цикл работы.</li><li><b style="font-weight:500">Объём:</b> Вела до 200 интеграций с блогерами в месяц.</li><li><b style="font-weight:500">Бюджеты:</b> Самостоятельно брала на себя бюджеты от 100 тыс. до 6 млн ₽ в месяц.</li><li><b style="font-weight:500">Результат:</b> ROAS составлял 160–300+.</li><li><b style="font-weight:500">Масштаб:</b> За 6 лет открутила более 100 млн ₽ рекламного бюджета в разных компаниях.</li><li><b style="font-weight:500">Компании:</b> Работала в компаниях из сфер fashion, beauty, бытовой техники и в стартапах.</li><li><b style="font-weight:500">PR и амбассадорство:</b> Вела PR-рассылки и занималась амбассадорством.</li><li><b style="font-weight:500">Команда:</b> Руководила отделом скаутов из 6 человек.</li><li><b style="font-weight:500">Контент:</b> Создавала контент-заводы и вела UGC-креаторов.</li></ul></div></div>
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:24px 0;border-top:1px solid #CBD9C5"><span style="color:#595959;margin-right:8px">Считаю и анализирую метрики:</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CPM</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ROI</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CPC</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ROAS</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CTR</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ER</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CPA</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ДРР (по запросу)</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #9CB393"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">С 12 лет</div><div style="flex:1 1 320px;color:#333333">Вела мемные паблики, покупала и продавала рекламу. Общая аудитория — 406 тыс. подписчиков.</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #9CB393"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">С 14 лет</div><div style="flex:1 1 320px;color:#333333">Перешла в SMM-копирайтинг и таргетированную рекламу в Facebook.</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #9CB393"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">Затем</div><div style="flex:1 1 320px;color:#333333">Полностью переключилась на influence. Начинала с косметики и бытовой техники.</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:24px 0;border-top:1px solid #9CB393"><div style="flex:0 0 160px;color:#4F7A52;font-weight:500">Последние 6 лет</div><div style="flex:1 1 320px;color:#333333"><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px"><li><b style="font-weight:500">Реклама:</b> Занималась коммерческой и бартерной рекламой, полный цикл работы.</li><li><b style="font-weight:500">Объём:</b> Вела до 200 интеграций с блогерами в месяц.</li><li><b style="font-weight:500">Бюджеты:</b> Самостоятельно брала на себя бюджеты от 100 тыс. до 6 млн ₽ в месяц.</li><li><b style="font-weight:500">Результат:</b> ROAS составлял 160–300+.</li><li><b style="font-weight:500">Масштаб:</b> За 6 лет открутила более 100 млн ₽ рекламного бюджета в разных компаниях.</li><li><b style="font-weight:500">Компании:</b> Работала в компаниях из сфер fashion, beauty, бытовой техники и в стартапах.</li><li><b style="font-weight:500">PR и амбассадорство:</b> Вела PR-рассылки и занималась амбассадорством.</li><li><b style="font-weight:500">Команда:</b> Руководила отделом скаутов из 6 человек.</li><li><b style="font-weight:500">Контент:</b> Создавала контент-заводы и вела UGC-креаторов.</li></ul></div></div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:24px 0;border-top:1px solid #9CB393"><span style="color:#595959;margin-right:8px">Считаю и анализирую метрики:</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CPM</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ROI</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CPC</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ROAS</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CTR</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ER</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">CPA</span><span style="border:1px solid #B7C9AF;border-radius:6px;padding:4px 12px;font-size:14px">ДРР (по запросу)</span></div>
 </section><section style="max-width:1160px;margin:0 auto;padding:40px 24px">
 <h2 style="margin:0 0 32px;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(24px,6.5vw,36px)">Чем занимаюсь</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:20px">
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">Полный цикл работы с блогерами</h3><p style="margin:0;color:#595959;font-size:16px">Подбор площадок и авторов, переговоры, написание ТЗ, согласование материалов и контроль метрик. Закуп рекламы на площадках: Telegram, YouTube, Instagram, MAX, Дзен, TikTok, ВКонтакте, Likee.</p></div>
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">Договоры и маркировка</h3><p style="margin:0;color:#595959;font-size:16px">Оформление договоров и маркировка рекламы. Понимание законодательства РФ и владение опытом работы с ОРД.</p></div>
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">UGC и контент-заводы</h3><p style="margin:0;color:#595959;font-size:16px">Создание контент-заводов и запуск от 3 до 11 креаторов. Согласование материалов, организация съёмок, ведение UGC-креаторов.</p></div>
-<div style="background:#C4D2BF;border:1px solid #CBD9C5;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">Руководство командой скаутов</h3><p style="margin:0;color:#595959;font-size:16px">Руководство отделом скаутов из 6 человек, распределение бюджета и контроль метрик.</p></div>
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">Полный цикл работы с блогерами</h3><p style="margin:0;color:#595959;font-size:16px">Подбор площадок и авторов, переговоры, написание ТЗ, согласование материалов и контроль метрик. Закуп рекламы на площадках: Telegram, YouTube, Instagram, MAX, Дзен, TikTok, ВКонтакте, Likee.</p></div>
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">Договоры и маркировка</h3><p style="margin:0;color:#595959;font-size:16px">Оформление договоров и маркировка рекламы. Понимание законодательства РФ и владение опытом работы с ОРД.</p></div>
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">UGC и контент-заводы</h3><p style="margin:0;color:#595959;font-size:16px">Создание контент-заводов и запуск от 3 до 11 креаторов. Согласование материалов, организация съёмок, ведение UGC-креаторов.</p></div>
+<div style="background:#C4D2BF;border:1px solid #9CB393;border-radius:12px;padding:24px"><h3 style="margin:0 0 8px;font-size:18px">Руководство командой скаутов</h3><p style="margin:0;color:#595959;font-size:16px">Руководство отделом скаутов из 6 человек, распределение бюджета и контроль метрик.</p></div>
 </div>
 </section>
-<section aria-label="Бренды, с которыми я работала" style="border-top:1px solid #CBD9C5;padding:28px 0 32px;overflow:hidden">
+<section aria-label="Бренды, с которыми я работала" style="border-top:1px solid #9CB393;padding:28px 0 32px;overflow:hidden">
 <div style="text-align:center;font-size:14px;color:#8C8C8C;margin-bottom:16px">Бренды, с которыми я работала</div>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px"><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/mixit.jpg" alt="MIXIT" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/riche.png" alt="RICHE" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/theact2.jpg" alt="THE ACT" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/toptop.jpg" alt="TOPTOP" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/voishe.png" alt="VOISHE" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/cheelee.png" alt="CHEELEE" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/demiand.png" alt="DEMIAND" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/felfri.png" alt="FELFRI" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/graymoss.png" alt="GRAY MOSS" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span><span style="display:inline-flex;align-items:center;justify-content:center;width:112px;height:48px;background:#FFFFFF;border-radius:8px;box-sizing:border-box;padding:8px"><img src="/assets/img/brands/twoself.jpg" alt="TWOSELF" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block"></span></div>
 </section>
@@ -126,6 +144,18 @@ blockquote{font-size:16px !important}
   window.addEventListener("resize", update);
   update();
 })();
+function toggleTheme(){
+  var html = document.documentElement;
+  var isDark = html.getAttribute("data-theme") === "dark";
+  if (isDark) { html.removeAttribute("data-theme"); try{localStorage.setItem("theme","light")}catch(e){} }
+  else { html.setAttribute("data-theme","dark"); try{localStorage.setItem("theme","dark")}catch(e){} }
+  updateThemeIcon();
+}
+function updateThemeIcon(){
+  var btn = document.querySelector(".theme-toggle");
+  if (btn) { btn.textContent = document.documentElement.getAttribute("data-theme") === "dark" ? "☀️" : "🌙"; }
+}
+updateThemeIcon();
 </script>
 </body>
 </html>
