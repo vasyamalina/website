@@ -1,220 +1,78 @@
-<!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Книги — Лина Кривенко</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#1A1A1A',
-                            sand: '#F7F4F0',
-                            accent: '#8C6D53',
-                            muted: '#666666'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лина Кривенко — книги</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;700&display=swap">
+<style>
+body{margin:0}
+a{color:#D98B5F}a:hover{color:#E8A87A}
+</style>
 </head>
-<body class="bg-brand-sand text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
-
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-brand-sand/90 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="font-serif text-xl font-medium tracking-wide">Василина Кривенко</a>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="index.html" class="hover:text-brand-accent transition-colors">Главная</a>
-                <a href="work.html" class="hover:text-brand-accent transition-colors">Работа</a>
-                <a href="books.html" class="text-brand-accent border-b border-brand-accent pb-0.5">Книги</a>
-                <a href="#contact" class="hover:text-brand-accent transition-colors">Связаться</a>
-                <div class="flex items-center space-x-2 text-xs border-l border-stone-300 pl-6">
-                    <span class="font-bold">RU</span>
-                    <span class="text-stone-400">/</span>
-                    <a href="#" class="text-stone-400 hover:text-brand-dark transition-colors">EN</a>
-                </div>
-            </nav>
-
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-sand border-b border-stone-200 px-6 py-4 space-y-3">
-            <a href="index.html" class="block hover:text-brand-accent">Главная</a>
-            <a href="work.html" class="block hover:text-brand-accent">Работа</a>
-            <a href="books.html" class="block text-brand-accent font-medium">Книги</a>
-            <a href="#contact" class="block hover:text-brand-accent">Связаться</a>
-            <div class="flex items-center space-x-2 text-xs pt-2 border-t border-stone-200">
-                <span class="font-bold">RU</span>
-                <span>/</span>
-                <a href="#" class="text-stone-400">EN</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Books Hero -->
-    <section class="max-w-6xl mx-auto px-6 pt-16 pb-12">
-        <div class="max-w-3xl space-y-6">
-            <div class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase font-semibold text-brand-accent bg-stone-200/60 px-3 py-1.5 rounded-full">
-                <span>Лина Кривенко</span>
-            </div>
-            <h1 class="font-serif text-4xl md:text-6xl font-normal leading-tight">Остросюжетные любовные романы</h1>
-            <p class="text-stone-700 text-lg font-light leading-relaxed">
-                Сложные эмоции, атмосферные миры и человеческие судьбы. Все книги доступны на платформе Литнет.
-            </p>
-            <div>
-                <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="inline-flex items-center space-x-2 bg-brand-dark text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-stone-800 transition-all">
-                    <span>Профиль автора на Литнет</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cycle Vesper Bond Block -->
-    <section class="max-w-6xl mx-auto px-6 py-12 border-t border-stone-200">
-        <div class="bg-stone-100/60 p-8 md:p-12 rounded-2xl border border-stone-200 space-y-6">
-            <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold">Цикл</div>
-            <h2 class="font-serif text-3xl md:text-4xl font-normal">Vesper Bond (Vesper & Vinculum)</h2>
-            <div class="space-y-4 text-stone-700 font-light leading-relaxed text-base max-w-3xl">
-                <p>Иногда человек появляется в твоей жизни случайно.</p>
-                <p>А потом оказывается, что после него прежней тебя уже не будет.</p>
-                <p><strong class="font-medium text-brand-dark">Vesper</strong> и <strong class="font-medium text-brand-dark">Vinculum</strong> — две книги одной истории о встрече, которая постепенно меняет всё: отношения, решения, границы и представление о том, что между двумя людьми вообще может быть.</p>
-                <p>Здесь нет простой истории любви. Есть прошлое, которое догоняет, решения, за которые приходится платить, и связь, которая становится слишком сильной, чтобы её можно было назвать случайностью.</p>
-                <blockquote class="italic border-l-2 border-brand-accent pl-4 my-4 font-serif text-stone-800">
-                    «Некоторые места выбирают людей задолго до того, как люди выбирают их».
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
-    <!-- Books List -->
-    <section class="max-w-6xl mx-auto px-6 py-12">
-        <div class="space-y-16">
-            
-            <!-- Vesper -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-stone-100/40 p-8 rounded-2xl border border-stone-200">
-                <div class="aspect-[3/4] bg-stone-300 rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
-                    <span class="text-stone-500 text-sm">Обложка Vesper</span>
-                </div>
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700 font-semibold">Vesper Bond</span>
-                        <span class="text-xs uppercase tracking-widest bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-medium">Завершена</span>
-                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">18+</span>
-                    </div>
-                    <h3 class="font-serif text-3xl">Vesper</h3>
-                    <p class="text-stone-600 font-light leading-relaxed">
-                        История о поиске света в темноте, переплетении человеческих судеб и неизбежности выбора.
-                    </p>
-                    <div>
-                        <a href="https://litnet.com/ru/book/vesper-b4321349" target="_blank" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
-                            <span>Читать на Литнет</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Vinculum -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-stone-100/40 p-8 rounded-2xl border border-stone-200">
-                <div class="aspect-[3/4] bg-stone-300 rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
-                    <span class="text-stone-500 text-sm">Обложка Vinculum</span>
-                </div>
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700 font-semibold">Vesper Bond</span>
-                        <span class="text-xs uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">В процессе</span>
-                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">18+</span>
-                    </div>
-                    <h3 class="font-serif text-3xl">Vinculum</h3>
-                    <p class="text-stone-600 font-light leading-relaxed">
-                        Неразрывные связи, ментальные ловушки и расплата за тайны прошлого.
-                    </p>
-                    <div>
-                        <a href="https://litnet.com/ru/book/vinculum-b4523363" target="_blank" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
-                            <span>Читать на Литнет</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Venezia Nera -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-stone-100/40 p-8 rounded-2xl border border-stone-200">
-                <div class="aspect-[3/4] bg-stone-300 rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
-                    <span class="text-stone-500 text-sm">Обложка Venezia Nera</span>
-                </div>
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700 font-semibold">Роман</span>
-                        <span class="text-xs uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">В процессе</span>
-                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">18+</span>
-                    </div>
-                    <h3 class="font-serif text-3xl">Venezia Nera</h3>
-                    <p class="text-stone-600 font-light leading-relaxed">
-                        Мрачная изнанка каналов старой Венеции, где маски скрывают истинные лица.
-                    </p>
-                    <div>
-                        <a href="https://litnet.com/ru/book/venezia-nera-b74322623" target="_blank" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
-                            <span>Читать на Литнет</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Cross-link back to work -->
-    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-200 text-center">
-        <h3 class="font-serif text-2xl mb-4">Работаете с брендами?</h3>
-        <p class="text-stone-600 font-light mb-6">Я ещё и influence-менеджер. Кейсы и услуги на странице «Работа».</p>
-        <a href="work.html" class="inline-flex items-center space-x-2 border border-stone-400 text-brand-dark px-8 py-3 rounded-full text-sm font-medium hover:border-brand-dark transition-all">
-            <span>Перейти к работе</span>
-        </a>
-    </section>
-
-    <!-- Contact Footer -->
-    <footer id="contact" class="bg-brand-dark text-brand-sand py-24 mt-16">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h2 class="font-serif text-3xl md:text-4xl mb-4 font-normal">Открыта к проектам в influence-маркетинге и коллаборациям с брендами</h2>
-                <p class="text-stone-400 font-light mb-8">Напишите, что нужно сделать и в какие сроки. Отвечу в течение дня.</p>
-                <div class="flex flex-wrap gap-6 text-sm">
-                    <a href="mailto:vasilinakzlv@gmail.com" class="hover:text-brand-accent transition-colors"><i class="fa-regular fa-envelope mr-2"></i> vasilinakzlv@gmail.com</a>
-                    <a href="https://t.me/vsnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-telegram mr-2"></i> Telegram</a>
-                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
-                    <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-book mr-2"></i> Литнет</a>
-                </div>
-            </div>
-            <div class="flex flex-col justify-end items-start md:items-end space-y-4">
-                <div class="text-xs text-stone-500">© 2026 Василина Кривенко Influence-менеджер и писательница</div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+<body style="margin:0">
+<div style="background:#2D2318;color:#F2E8DA;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6">
+<header style="max-width:1160px;margin:0 auto;padding:24px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="index.html" style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#F2E8DA;text-decoration:none">Василина Кривенко</a>
+<nav style="display:flex;flex-wrap:wrap;gap:8px 24px;font-size:15px;align-items:center">
+<a href="index.html" style="color:#CBB89E;text-decoration:none">Главная</a>
+<a href="work.html" style="color:#CBB89E;text-decoration:none">Работа</a>
+<a href="books.html" style="color:#F2E8DA;font-weight:500;text-decoration:none">Книги</a>
+<a href="hobbies.html" style="color:#CBB89E;text-decoration:none">Хобби</a>
+<span style="color:#9C8870">RU / EN</span>
+<a href="index.html" style="background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:500">Связаться</a>
+</nav>
+</header>
+<section id="top" style="max-width:1160px;margin:0 auto;padding:56px 24px 32px;display:flex;flex-direction:column;gap:16px">
+<div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#D98B5F;font-weight:500">Писательница</div>
+<h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:52px;line-height:1.12">Лина Кривенко</h1>
+<p style="margin:0;font-size:19px;color:#CBB89E;max-width:720px">Остросюжетные любовные романы и нуар. Все книги доступны на Литнет.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px"><a href="https://litnet.com/ru/lina-krivenko-u13279836" style="border:1px solid #8A6F4E;color:#F2E8DA;text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:500">Профиль автора на Литнет</a></div>
+</section>
+<section style="max-width:1160px;margin:0 auto;padding:0 24px 56px">
+<div style="margin-bottom:8px;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#D98B5F;font-weight:500">Цикл Vesper Bond</div>
+<p style="margin:0 0 32px;font-size:18px;color:#E3D5C0;line-height:1.6;max-width:760px">Иногда человек появляется в твоей жизни случайно. А потом оказывается, что после него прежней тебя уже не будет.<br><br>Vesper и Vinculum — две книги одной истории о встрече, которая постепенно меняет всё: отношения, решения, границы и представление о том, что между двумя людьми вообще может быть.<br><br>Здесь нет простой истории любви. Есть прошлое, которое догоняет, решения, за которые приходится платить, и связь, которая становится слишком сильной, чтобы её можно было назвать случайностью.</p>
+<blockquote style="margin:0 0 40px;padding:20px 24px;background:#3C2F21;border-left:3px solid #D98B5F;font-family:'Playfair Display',serif;font-size:19px;line-height:1.55;color:#E3D5C0;max-width:760px">«Некоторые места выбирают людей задолго до того, как люди выбирают их».</blockquote>
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;padding:40px 0;border-top:1px solid #51402C">
+<div style="aspect-ratio:2/3;max-width:260px;width:100%;border-radius:10px;overflow:hidden"><img src="assets/img/vesper.png" alt="Vesper" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="grid-column:span 2;display:flex;flex-direction:column;gap:12px;min-width:0">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px"><span style="font-size:14px;color:#9C8870">Остросюжетный любовный роман · книга 1</span><span style="background:#3C2F21;border-radius:6px;padding:3px 10px;font-size:13px;color:#CBB89E">Завершена</span><span style="background:#1A130C;color:#F2E8DA;border-radius:6px;padding:3px 10px;font-size:13px">18+</span></div>
+<h2 style="margin:0;font-family:'Playfair Display',serif;font-size:34px">VESPER</h2>
+<p style="margin:0;font-size:18px;color:#E3D5C0">Наследовав империю деда, Изабелла становится целью №1 для пяти могущественных кланов. Защитить ее должен Адриан Винченцо — холодный управляющий, который скрывает собственную игру.
+<div><a href="https://litnet.com/ru/book/vesper-b616988" style="display:inline-block;background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:500">Читать на Литнет</a></div>
+</div>
+</article>
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;padding:40px 0;border-top:1px solid #51402C">
+<div style="aspect-ratio:2/3;max-width:260px;width:100%;border-radius:10px;overflow:hidden"><img src="assets/img/vinculum.jpg" alt="Vinculum" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="grid-column:span 2;display:flex;flex-direction:column;gap:12px;min-width:0">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px"><span style="font-size:14px;color:#9C8870">Остросюжетный любовный роман · книга 2</span><span style="background:#3C2F21;border-radius:6px;padding:3px 10px;font-size:13px;color:#CBB89E">В процессе</span><span style="background:#1A130C;color:#F2E8DA;border-radius:6px;padding:3px 10px;font-size:13px">18+</span></div>
+<h2 style="margin:0;font-family:'Playfair Display',serif;font-size:34px">VINCULUM</h2>
+<p style="margin:0;font-size:18px;color:#E3D5C0">Предыстория: книга о прошлом Адриана. мальчик с раскалённых улиц Сицилии становится идеальным щитом семьи Романо — и клянётся беречь её наследницу ещё до того, как взошла «Vesper».</p>
+<div><a href="https://litnet.com/ru/book/vinculum-b630681" style="display:inline-block;background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:500">Читать на Литнет</a></div>
+</div>
+</article>
+<div style="border-top:1px solid #51402C;padding-top:40px;margin-top:8px">
+<div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#D98B5F;font-weight:500;margin-bottom:8px">Отдельный роман</div>
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;padding:24px 0">
+<div style="aspect-ratio:2/3;max-width:260px;width:100%;border-radius:10px;overflow:hidden"><img src="assets/img/venezianera.jpg" alt="Venezia Nera" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="grid-column:span 2;display:flex;flex-direction:column;gap:12px;min-width:0">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px"><span style="font-size:14px;color:#9C8870">Остросюжетный любовный роман · любовный треугольник</span><span style="background:#3C2F21;border-radius:6px;padding:3px 10px;font-size:13px;color:#CBB89E">В процессе</span><span style="background:#1A130C;color:#F2E8DA;border-radius:6px;padding:3px 10px;font-size:13px">18+</span></div>
+<h2 style="margin:0;font-family:'Playfair Display',serif;font-size:34px">VENEZIA NERA</h2>
+<p style="margin:0;font-size:18px;color:#E3D5C0">Реставратора Нессу Вейн продают на аукционе за пять миллионов евро и запирают в палаццо Дамиано Уолтера, чьи знания ей нужны, чтобы вскрыть древний «Шифр Мануция». Среди мрамора и старых тайн появляется второй игрок — Кристиан Ноэль, соратник Дамиано. Зажатая между двумя могущественными мужчинами, Несса отказывается быть их безгласным лотом.</p>
+<div><a href="https://litnet.com/ru/book/venezia-nera-b631092" style="display:inline-block;background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:500">Читать на Литнет</a></div>
+</div>
+</article>
+</div>
+</section>
+<section style="background:#1A130C;color:#F2E8DA;padding:64px 24px">
+<div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:32px">Работаете с брендами?</h2>
+<p style="margin:0;color:#CBB89E">Я ещё и influence-менеджер. Кейсы и услуги на странице «Работа».</p>
+<div><a href="work.html" style="display:inline-block;background:#2D2318;color:#F2E8DA;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:500">Перейти к работе</a></div>
+</div>
+</section>
+<footer style="max-width:1160px;margin:0 auto;padding:28px 24px;color:#9C8870;font-size:14px">© 2026 Лина Кривенко</footer>
+</div>
 </body>
 </html>

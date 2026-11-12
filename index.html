@@ -1,221 +1,91 @@
-<!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Василина Кривенко — Influence-менеджер и писательница</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#1A1A1A',
-                            sand: '#F7F4F0',
-                            accent: '#8C6D53',
-                            muted: '#666666'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Василина Кривенко — influence-менеджер и писательница</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Playfair+Display:wght@500;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#D98B5F}a:hover{color:#E8A87A}
+@keyframes marq{to{transform:translateX(-50%)}}
+.marq{animation:marq 45s linear infinite}
+@media (prefers-reduced-motion:reduce){.marq{animation:none}}
+</style>
 </head>
-<body class="bg-brand-sand text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
-
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-brand-sand/90 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="font-serif text-xl font-medium tracking-wide">Василина Кривенко</a>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="index.html" class="text-brand-accent border-b border-brand-accent pb-0.5">Главная</a>
-                <a href="work.html" class="hover:text-brand-accent transition-colors">Работа</a>
-                <a href="books.html" class="hover:text-brand-accent transition-colors">Книги</a>
-                <a href="#contact" class="hover:text-brand-accent transition-colors">Связаться</a>
-                <div class="flex items-center space-x-2 text-xs border-l border-stone-300 pl-6">
-                    <span class="font-bold">RU</span>
-                    <span class="text-stone-400">/</span>
-                    <a href="#" class="text-stone-400 hover:text-brand-dark transition-colors">EN</a>
-                </div>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-sand border-b border-stone-200 px-6 py-4 space-y-3">
-            <a href="index.html" class="block text-brand-accent font-medium">Главная</a>
-            <a href="work.html" class="block hover:text-brand-accent">Работа</a>
-            <a href="books.html" class="block hover:text-brand-accent">Книги</a>
-            <a href="#contact" class="block hover:text-brand-accent">Связаться</a>
-            <div class="flex items-center space-x-2 text-xs pt-2 border-t border-stone-200">
-                <span class="font-bold">RU</span>
-                <span>/</span>
-                <a href="#" class="text-stone-400">EN</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 pt-16 pb-24 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-            <div class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase font-semibold text-brand-accent bg-stone-200/60 px-3 py-1.5 rounded-full">
-                <span>Influence-менеджер</span>
-                <span>•</span>
-                <span>Писательница</span>
-            </div>
-            <h1 class="font-serif text-4xl md:text-6xl font-normal leading-tight">
-                Строю блогерские кампании от стратегии до отчёта ROI
-            </h1>
-            <p class="text-stone-600 text-lg leading-relaxed font-light">
-                6 лет работаю с блогерами: от закупки рекламы до руководства командой скаутов. Веду кампании для fashion, beauty и бытовой техники. Пишу остросюжетные любовные романы под именем Лина Кривенко.
-            </p>
-            <div class="flex flex-wrap gap-4 pt-4">
-                <a href="#contact" class="bg-brand-dark text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-stone-800 transition-all shadow-sm">
-                    Связаться
-                </a>
-                <a href="work.html" class="border border-stone-400 text-brand-dark px-8 py-4 rounded-full text-sm font-medium hover:border-brand-dark transition-all">
-                    Скачать резюме
-                </a>
-            </div>
-        </div>
-        <div class="relative">
-            <div class="aspect-[4/5] bg-stone-200 rounded-2xl overflow-hidden shadow-md flex items-center justify-center border border-stone-300">
-                <img src="photomoe.jpg" alt="Василина Кривенко" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Bar -->
-    <section class="border-y border-stone-200 bg-stone-100/50">
-        <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
-            <div>
-                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">6 лет</div>
-                <div class="text-sm text-stone-600 font-light">в influence-маркетинге</div>
-            </div>
-            <div>
-                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">100+ млн ₽</div>
-                <div class="text-sm text-stone-600 font-light">открученного рекламного бюджета за 6 лет</div>
-            </div>
-            <div>
-                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">6 человек</div>
-                <div class="text-sm text-stone-600 font-light">в отделе скаутов под моим руководством</div>
-            </div>
-            <div>
-                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">3 книги</div>
-                <div class="text-sm text-stone-600 font-light">опубликованы на Литнет</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="max-w-6xl mx-auto px-6 py-24">
-        <div class="max-w-3xl">
-            <h2 class="font-serif text-3xl md:text-4xl font-normal mb-8">Обо мне</h2>
-            <div class="space-y-6 text-stone-700 text-lg font-light leading-relaxed">
-                <p>
-                    Мой путь начался в Красноярске, потом был Екатеринбург, а сейчас я живу в Сербии и работаю с удалёнными международными проектами.
-                </p>
-                <p>
-                    Получаю образование в области философии, пишу остросюжетные любовные романы под именем Лина Кривенко, люблю хоккей и путешествия. Всей душой люблю медиаполе и творческие, нестандартные подачи.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cards Section (Work & Books) -->
-    <section class="bg-stone-100/60 py-24 border-t border-stone-200">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Work Card -->
-            <div class="bg-brand-sand border border-stone-200 rounded-2xl p-8 md:p-12 flex flex-col justify-between hover:shadow-lg transition-shadow">
-                <div>
-                    <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-3">Направление</div>
-                    <h3 class="font-serif text-3xl mb-4">Работа</h3>
-                    <p class="text-stone-600 font-light mb-8">
-                        Influence-стратегии, блогерские кампании, UGC. Кейсы и бренды, с которыми работала.
-                    </p>
-                </div>
-                <a href="work.html" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
-                    <span>Смотреть работу</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-            </div>
-
-            <!-- Books Card -->
-            <div class="bg-brand-sand border border-stone-200 rounded-2xl p-8 md:p-12 flex flex-col justify-between hover:shadow-lg transition-shadow">
-                <div>
-                    <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-3">Творчество</div>
-                    <h3 class="font-serif text-3xl mb-4">Книги</h3>
-                    <p class="text-stone-600 font-light mb-8">
-                        Остросюжетные любовные романы под именем Лина Кривенко. Цикл Vesper Bond и новые истории на Литнет.
-                    </p>
-                </div>
-                <a href="books.html" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
-                    <span>Все книги</span>
-                    <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Marquee Section -->
-    <section class="py-20 border-t border-stone-200 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 mb-10 text-center">
-            <h3 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Бренды, с которыми я работала</h3>
-        </div>
-        <div class="flex space-x-12 animate-marquee whitespace-nowrap text-stone-400 font-serif text-xl md:text-2xl justify-center items-center flex-wrap gap-8">
-            <span class="hover:text-brand-dark transition-colors">MIXIT</span>
-            <span class="hover:text-brand-dark transition-colors">RICHE</span>
-            <span class="hover:text-brand-dark transition-colors">THE ACT</span>
-            <span class="hover:text-brand-dark transition-colors">TOPTOP</span>
-            <span class="hover:text-brand-dark transition-colors">VOISHE</span>
-            <span class="hover:text-brand-dark transition-colors">CHEELEE</span>
-            <span class="hover:text-brand-dark transition-colors">DEMIAND</span>
-            <span class="hover:text-brand-dark transition-colors">FELFRI</span>
-            <span class="hover:text-brand-dark transition-colors">GRAY MOSS</span>
-            <span class="hover:text-brand-dark transition-colors">TWOSELF</span>
-        </div>
-    </section>
-
-    <!-- Contact Footer -->
-    <footer id="contact" class="bg-brand-dark text-brand-sand py-24">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h2 class="font-serif text-3xl md:text-4xl mb-4 font-normal">Открыта к проектам в influence-маркетинге и коллаборациям с брендами</h2>
-                <p class="text-stone-400 font-light mb-8">Напишите, что нужно сделать и в какие сроки. Отвечу в течение дня.</p>
-                <div class="flex flex-wrap gap-6 text-sm">
-                    <a href="mailto:vasilinakzlv@gmail.com" class="hover:text-brand-accent transition-colors"><i class="fa-regular fa-envelope mr-2"></i> vasilinakzlv@gmail.com</a>
-                    <a href="https://t.me/vsnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-telegram mr-2"></i> Telegram</a>
-                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
-                    <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-book mr-2"></i> Литнет</a>
-                </div>
-            </div>
-            <div class="flex flex-col justify-end items-start md:items-end space-y-4">
-                <div class="text-xs text-stone-500">© 2026 Василина Кривенко Influence-менеджер и писательница</div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+<body style="margin:0">
+<div style="background:#2D2318;color:#F2E8DA;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6">
+<header style="max-width:1160px;margin:0 auto;padding:24px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="index.html" style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#F2E8DA;text-decoration:none">Василина Кривенко</a>
+<nav style="display:flex;flex-wrap:wrap;gap:8px 24px;font-size:15px;align-items:center">
+<a href="index.html" style="color:#F2E8DA;font-weight:500;text-decoration:none">Главная</a>
+<a href="work.html" style="color:#CBB89E;text-decoration:none">Работа</a>
+<a href="books.html" style="color:#CBB89E;text-decoration:none">Книги</a>
+<a href="hobbies.html" style="color:#CBB89E;text-decoration:none">Хобби</a>
+<span style="color:#9C8870">RU / EN</span>
+<a href="#contacts" style="background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:500">Связаться</a>
+</nav>
+</header>
+<section id="top" style="max-width:1160px;margin:0 auto;padding:64px 24px 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#D98B5F;font-weight:500">Influence-менеджер · писательница</div>
+<h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:52px;line-height:1.12">Строю рекламу у блогеров на цифрах, а не на удаче</h1>
+<p style="margin:0;font-size:19px;color:#CBB89E">6 лет работаю с блогерами: от закупки рекламы до руководства командой скаутов.</p>
+<p style="margin:0;font-size:19px;color:#CBB89E">Пишу романы под именем Лина Кривенко.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="#contacts" style="background:#D98B5F;color:#FFFFFF;text-decoration:none;padding:14px 26px;border-radius:8px;font-weight:500">Связаться</a>
+</div>
+</div>
+<div style="aspect-ratio:4/5;max-height:520px;width:100%;border-radius:16px;overflow:hidden"><img src="assets/img/photomoe.jpg" alt="Василина Кривенко" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+</section>
+<section style="background:#3C2F21;padding:48px 24px">
+<div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px">
+<div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#D98B5F;line-height:1.2">6 лет</div><div style="color:#CBB89E">в influence-маркетинге</div></div><div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#D98B5F;line-height:1.2">100+ млн ₽</div><div style="color:#CBB89E">открученного рекламного бюджета за 6 лет</div></div><div><div style="font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#D98B5F;line-height:1.2">3 книги</div><div style="color:#CBB89E">опубликованы на Литнет</div></div></div>
+</section>
+<section id="about" style="max-width:1160px;margin:0 auto;padding:88px 24px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px">
+<h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:36px;line-height:1.2">Обо мне</h2>
+<div style="display:flex;flex-direction:column;gap:16px;color:#E3D5C0">
+<p style="margin:0">Мой путь начался в Красноярске, потом был Екатеринбург, а сейчас я живу в Сербии и работаю с удалёнными международными проектами.</p>
+<p style="margin:0">Получаю образование в области философии, пишу книги под именем Лина Кривенко, люблю хоккей и путешествия. Всей душой люблю медиаполе и творческие, нестандартные подачи.</p>
+</div>
+</section>
+<section aria-label="Бренды, с которыми я работала" style="border-top:1px solid #51402C;padding:28px 0 32px;margin-top:40px;overflow:hidden">
+<div style="text-align:center;font-size:14px;color:#9C8870;margin-bottom:16px">Бренды, с которыми я работала</div>
+<div class="marq" style="display:flex;width:max-content"><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/mixit.jpg" alt="MIXIT" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/riche.png" alt="RICHE" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/theact.jpg" alt="THE ACT" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/toptop.jpg" alt="TOPTOP" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/voishe.png" alt="VOISHE" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/cheelee.png" alt="CHEELEE" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/demiand.png" alt="DEMIAND" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/felfri.png" alt="FELFRI" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/graymoss.png" alt="GRAY MOSS" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/twoself.jpg" alt="TWOSELF" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/mixit.jpg" alt="MIXIT" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/riche.png" alt="RICHE" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/theact.jpg" alt="THE ACT" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/toptop.jpg" alt="TOPTOP" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/voishe.png" alt="VOISHE" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/cheelee.png" alt="CHEELEE" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/demiand.png" alt="DEMIAND" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/felfri.png" alt="FELFRI" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/graymoss.png" alt="GRAY MOSS" style="height:22px;width:auto;display:block"></span><span style="display:inline-flex;align-items:center;background:#FFFFFF;border-radius:8px;padding:8px 18px;margin-right:40px"><img src="assets/img/brands/twoself.jpg" alt="TWOSELF" style="height:22px;width:auto;display:block"></span></div>
+</section>
+<section style="max-width:1160px;margin:0 auto;padding:80px 24px 40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div style="background:#3C2F21;border:1px solid #51402C;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px">Работа</h3>
+<p style="margin:0;color:#CBB89E;font-size:16px">Influence-стратегии, блогерские кампании, UGC. Кейсы и бренды, с которыми работала.</p>
+<div style="margin-top:auto"><a href="work.html" style="font-weight:500">Смотреть работу →</a></div>
+</div>
+<div style="background:#3C2F21;border:1px solid #51402C;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px">Книги</h3>
+<p style="margin:0;color:#CBB89E;font-size:16px">Остросюжетные любовные романы (цикл Vesper Bond) и нуар под именем Лина Кривенко. Три книги на Литнет.</p>
+<div style="margin-top:auto"><a href="books.html" style="font-weight:500">Все книги →</a></div>
+</div>
+<div style="background:#3C2F21;border:1px solid #51402C;border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px">Хобби</h3>
+<p style="margin:0;color:#CBB89E;font-size:16px">Путешествия и хоккей: то, что подпитывает творчество.</p>
+<div style="margin-top:auto"><a href="hobbies.html" style="font-weight:500">Узнать больше →</a></div>
+</div>
+</div>
+</section>
+<section id="contacts" style="background:#1A130C;color:#F2E8DA;padding:88px 24px;margin-top:64px">
+<div style="max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:40px;line-height:1.2">Открыта к проектам в influence-маркетинге и коллаборациям с брендами</h2>
+<p style="margin:0;color:#CBB89E">Напишите, что нужно сделать и в какие сроки. Отвечу в течение [срок].</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px 28px;font-size:18px">
+<span>[e-mail]</span>
+<a href="https://t.me/vsnmln" style="color:#F0B98A">Telegram</a>
+<a href="https://www.instagram.com/vslnmln" style="color:#F0B98A">Instagram</a>
+<a href="https://litnet.com/ru/lina-krivenko-u13279836" style="color:#F0B98A">Литнет</a>
+</div>
+</div>
+</section>
+<footer style="max-width:1160px;margin:0 auto;padding:28px 24px;color:#9C8870;font-size:14px">© 2026 Василина Кривенко · Influence-менеджер и писательница</footer>
+</div>
 </body>
 </html>
