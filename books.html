@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книги — Лина Кривенко</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1A1A1A',
+                            sand: '#F7F4F0',
+                            accent: '#8C6D53',
+                            muted: '#666666'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-sand text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-brand-sand/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-xl font-medium tracking-wide">Василина Кривенко</a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-brand-accent transition-colors">Главная</a>
+                <a href="work.html" class="hover:text-brand-accent transition-colors">Работа</a>
+                <a href="books.html" class="text-brand-accent border-b border-brand-accent pb-0.5">Книги</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors">Связаться</a>
+                <div class="flex items-center space-x-2 text-xs border-l border-stone-300 pl-6">
+                    <span class="font-bold">RU</span>
+                    <span class="text-stone-400">/</span>
+                    <a href="#" class="text-stone-400 hover:text-brand-dark transition-colors">EN</a>
+                </div>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-sand border-b border-stone-200 px-6 py-4 space-y-3">
+            <a href="index.html" class="block hover:text-brand-accent">Главная</a>
+            <a href="work.html" class="block hover:text-brand-accent">Работа</a>
+            <a href="books.html" class="block text-brand-accent font-medium">Книги</a>
+            <a href="#contact" class="block hover:text-brand-accent">Связаться</a>
+            <div class="flex items-center space-x-2 text-xs pt-2 border-t border-stone-200">
+                <span class="font-bold">RU</span>
+                <span>/</span>
+                <a href="#" class="text-stone-400">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Books Hero -->
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-12">
+        <div class="max-w-3xl space-y-6">
+            <div class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase font-semibold text-brand-accent bg-stone-200/60 px-3 py-1.5 rounded-full">
+                <span>Лина Кривенко</span>
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl font-normal leading-tight">Остросюжетные любовные романы</h1>
+            <p class="text-stone-700 text-lg font-light leading-relaxed">
+                Сложные эмоции, атмосферные миры и человеческие судьбы. Все книги доступны на платформе Литнет.
+            </p>
+            <div>
+                <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="inline-flex items-center space-x-2 bg-brand-dark text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-stone-800 transition-all">
+                    <span>Профиль автора на Литнет</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cycle Vesper Bond Block -->
+    <section class="max-w-6xl mx-auto px-6 py-12 border-t border-stone-200">
+        <div class="bg-stone-100/60 p-8 md:p-12 rounded-2xl border border-stone-200 space-y-6">
+            <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold">Цикл</div>
+            <h2 class="font-serif text-3xl md:text-4xl font-normal">Vesper Bond (Vesper & Vinculum)</h2>
+            <div class="space-y-4 text-stone-700 font-light leading-relaxed text-base max-w-3xl">
+                <p>Иногда человек появляется в твоей жизни случайно.</p>
+                <p>А потом оказывается, что после него прежней тебя уже не будет.</p>
+                <p><strong class="font-medium text-brand-dark">Vesper</strong> и <strong class="font-medium text-brand-dark">Vinculum</strong> — две книги одной истории о встрече, которая постепенно меняет всё: отношения, решения, границы и представление о том, что между двумя людьми вообще может быть.</p>
+                <p>Здесь нет простой истории любви. Есть прошлое, которое догоняет, решения, за которые приходится платить, и связь, которая становится слишком сильной, чтобы её можно было назвать случайностью.</p>
+                <blockquote class="italic border-l-2 border-brand-accent pl-4 my-4 font-serif text-stone-800">
+                    «Некоторые места выбирают людей задолго до того, как люди выбирают их».
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books List -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+        <div class="space-y-16">
+            
+            <!-- Vesper -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-stone-100/40 p-8 rounded-2xl border border-stone-200">
+                <div class="aspect-[3/4] bg-stone-300 rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
+                    <span class="text-stone-500 text-sm">Обложка Vesper</span>
+                </div>
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700 font-semibold">Vesper Bond</span>
+                        <span class="text-xs uppercase tracking-widest bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-medium">Завершена</span>
+                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">18+</span>
+                    </div>
+                    <h3 class="font-serif text-3xl">Vesper</h3>
+                    <p class="text-stone-600 font-light leading-relaxed">
+                        История о поиске света в темноте, переплетении человеческих судеб и неизбежности выбора.
+                    </p>
+                    <div>
+                        <a href="https://litnet.com/ru/book/vesper-b4321349" target="_blank" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
+                            <span>Читать на Литнет</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vinculum -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-stone-100/40 p-8 rounded-2xl border border-stone-200">
+                <div class="aspect-[3/4] bg-stone-300 rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
+                    <span class="text-stone-500 text-sm">Обложка Vinculum</span>
+                </div>
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700 font-semibold">Vesper Bond</span>
+                        <span class="text-xs uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">В процессе</span>
+                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">18+</span>
+                    </div>
+                    <h3 class="font-serif text-3xl">Vinculum</h3>
+                    <p class="text-stone-600 font-light leading-relaxed">
+                        Неразрывные связи, ментальные ловушки и расплата за тайны прошлого.
+                    </p>
+                    <div>
+                        <a href="https://litnet.com/ru/book/vinculum-b4523363" target="_blank" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
+                            <span>Читать на Литнет</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Venezia Nera -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-stone-100/40 p-8 rounded-2xl border border-stone-200">
+                <div class="aspect-[3/4] bg-stone-300 rounded-xl overflow-hidden shadow-sm flex items-center justify-center">
+                    <span class="text-stone-500 text-sm">Обложка Venezia Nera</span>
+                </div>
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700 font-semibold">Роман</span>
+                        <span class="text-xs uppercase tracking-widest bg-amber-100 text-amber-800 px-3 py-1 rounded-full font-medium">В процессе</span>
+                        <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">18+</span>
+                    </div>
+                    <h3 class="font-serif text-3xl">Venezia Nera</h3>
+                    <p class="text-stone-600 font-light leading-relaxed">
+                        Мрачная изнанка каналов старой Венеции, где маски скрывают истинные лица.
+                    </p>
+                    <div>
+                        <a href="https://litnet.com/ru/book/venezia-nera-b74322623" target="_blank" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
+                            <span>Читать на Литнет</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cross-link back to work -->
+    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-200 text-center">
+        <h3 class="font-serif text-2xl mb-4">Работаете с брендами?</h3>
+        <p class="text-stone-600 font-light mb-6">Я ещё и influence-менеджер. Кейсы и услуги на странице «Работа».</p>
+        <a href="work.html" class="inline-flex items-center space-x-2 border border-stone-400 text-brand-dark px-8 py-3 rounded-full text-sm font-medium hover:border-brand-dark transition-all">
+            <span>Перейти к работе</span>
+        </a>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-brand-dark text-brand-sand py-24 mt-16">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="font-serif text-3xl md:text-4xl mb-4 font-normal">Открыта к проектам в influence-маркетинге и коллаборациям с брендами</h2>
+                <p class="text-stone-400 font-light mb-8">Напишите, что нужно сделать и в какие сроки. Отвечу в течение дня.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="mailto:vasilinakzlv@gmail.com" class="hover:text-brand-accent transition-colors"><i class="fa-regular fa-envelope mr-2"></i> vasilinakzlv@gmail.com</a>
+                    <a href="https://t.me/vsnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-telegram mr-2"></i> Telegram</a>
+                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
+                    <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-book mr-2"></i> Литнет</a>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end items-start md:items-end space-y-4">
+                <div class="text-xs text-stone-500">© 2026 Василина Кривенко Influence-менеджер и писательница</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
