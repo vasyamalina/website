@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
 <title>Лина Кривенко — книги</title>
 <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -139,6 +139,15 @@ function updateThemeIcon(){
   if (btn) { btn.textContent = document.documentElement.getAttribute("data-theme") === "dark" ? "☀️" : "🌙"; }
 }
 updateThemeIcon();
+try{
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+    if(!localStorage.getItem('theme')){
+      if (e.matches) { document.documentElement.setAttribute('data-theme','dark'); }
+      else { document.documentElement.removeAttribute('data-theme'); }
+      updateThemeIcon();
+    }
+  });
+}catch(e){}
 </script>
 </body>
 </html>
