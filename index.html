@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Василина Кривенко — Influence-менеджер & Писательница</title>
+    <title>Василина Кривенко — Influence-менеджер и писательница</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#CCD5CB',      /* Пастельно-шалфейный цвет фона */
-                        cardbg: '#FFFFFF',      /* Чисто белые карточки */
-                        cardhover: '#E2E8E4',   
-                        accent: '#1E382B',      /* Глубокий темно-зеленый текст */
-                        accenthover: '#13241B', 
+                        brand: {
+                            dark: '#1A1A1A',
+                            sand: '#F7F4F0',
+                            accent: '#8C6D53',
+                            muted: '#666666'
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -24,574 +26,196 @@
             }
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body {
-            background-color: #CCD5CB;
-            color: #1E382B;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-        .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(30, 56, 43, 0.15);
-            box-shadow: 0 10px 30px -10px rgba(30, 56, 43, 0.08);
-        }
-        .glass-card:hover {
-            border-color: rgba(30, 56, 43, 0.35);
-            box-shadow: 0 15px 35px -10px rgba(30, 56, 43, 0.15);
-        }
-        .glow-effect {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(204, 213, 203, 0) 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .profile-squircle {
-            border-radius: 2rem;
-            object-fit: cover;
-            aspect-ratio: 3 / 4;
-            width: 100%;
-            max-width: 280px;
-            box-shadow: 0 15px 35px -10px rgba(30, 56, 43, 0.2);
-        }
-        #back-to-top {
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        #back-to-top.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        /* Стили для бегущей строки */
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            width: 100%;
-            display: flex;
-        }
-        .marquee-track {
-            display: flex;
-            gap: 1.5rem;
-            will-change: transform;
-        }
-        .brand-logo-item {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1.75rem;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(30, 56, 43, 0.15);
-            border-radius: 1rem;
-            height: 72px;
-            min-width: 160px;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-        .brand-logo-item:hover {
-            background: #ffffff;
-            border-color: rgba(30, 56, 43, 0.4);
-            transform: translateY(-2px);
-        }
-        .brand-logo-item img {
-            max-height: 40px;
-            max-width: 130px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%) opacity(90%);
-            transition: filter 0.3s ease;
-        }
-        .brand-logo-item:hover img {
-            filter: grayscale(0%) opacity(100%);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-darkbg text-accent antialiased selection:bg-accent selection:text-white relative">
+<body class="bg-brand-sand text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
 
-    <div class="glow-effect top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
-    <div class="glow-effect top-2/3 right-10"></div>
-
-    <!-- Шапка сайта -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#CCD5CB]/90 backdrop-blur-md border-b border-[#1E382B]/10">
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-brand-sand/90 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif text-xl tracking-wide text-accent font-bold flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-accent"></span>
-                <span data-ru="Василина Кривенко" data-en="Vasilina Krivenko">Василина Кривенко</span>
-            </a>
+            <a href="index.html" class="font-serif text-xl font-medium tracking-wide">Василина Кривенко</a>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-accent/80">
-                <a href="#about" class="hover:text-accent transition-colors" data-ru="Обо мне" data-en="About">Обо мне</a>
-                <a href="#projects" class="hover:text-accent transition-colors" data-ru="Проекты и Опыт" data-en="Projects & Experience">Проекты и Опыт</a>
-                <a href="#hobbies" class="hover:text-accent transition-colors" data-ru="Хобби" data-en="Hobbies">Хобби</a>
-                <a href="#books" class="hover:text-accent transition-colors" data-ru="Книги" data-en="Books">Книги</a>
-                <a href="#contacts" class="hover:text-accent transition-colors" data-ru="Контакты" data-en="Contacts">Контакты</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="text-brand-accent border-b border-brand-accent pb-0.5">Главная</a>
+                <a href="work.html" class="hover:text-brand-accent transition-colors">Работа</a>
+                <a href="books.html" class="hover:text-brand-accent transition-colors">Книги</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors">Связаться</a>
+                <div class="flex items-center space-x-2 text-xs border-l border-stone-300 pl-6">
+                    <span class="font-bold">RU</span>
+                    <span class="text-stone-400">/</span>
+                    <a href="#" class="text-stone-400 hover:text-brand-dark transition-colors">EN</a>
+                </div>
             </nav>
 
-            <div class="flex items-center gap-3">
-                <!-- Селектор языка -->
-                <div class="relative">
-                    <button id="lang-menu-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/40 bg-white/60 text-xs font-semibold text-accent hover:bg-white transition-all shadow-sm focus:outline-none">
-                        <span id="current-flag" class="flex items-center">
-                            <svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="3"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg>
-                        </span>
-                        <span id="current-lang-text">Русский</span>
-                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
-                    </button>
-                    <!-- Выпадающее окно -->
-                    <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-36 bg-white border border-[#1E382B]/15 rounded-xl shadow-xl overflow-hidden z-50">
-                        <button onclick="setLanguage('ru')" class="w-full flex items-center gap-3 px-3.5 py-2.5 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
-                            <svg class="w-5 h-3.5 rounded-sm shadow-sm flex-shrink-0" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="3"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg> Русский
-                        </button>
-                        <button onclick="setLanguage('en')" class="w-full flex items-center gap-3 px-3.5 py-2.5 text-xs font-medium text-accent hover:bg-[#CCD5CB]/40 transition-colors text-left">
-                            <svg class="w-5 h-3.5 rounded-sm shadow-sm flex-shrink-0" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v-15 h-30 z h-30 v-15 z v15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg> English
-                        </button>
-                    </div>
-                </div>
-
-                <a href="#contacts" class="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold px-4 py-2.5 rounded-full border border-accent/40 text-accent hover:bg-accent hover:text-white transition-all" data-ru="Связаться" data-en="Contact">
-                    Связаться
-                </a>
-                <button id="menu-btn" class="md:hidden text-accent hover:text-accenthover focus:outline-none">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-[#1E382B]/10 p-6 flex flex-col gap-4 shadow-2xl">
-            <a href="#about" class="mobile-link text-accent hover:text-accenthover font-medium py-2" data-ru="Обо мне" data-en="About">Обо мне</a>
-            <a href="#projects" class="mobile-link text-accent hover:text-accenthover font-medium py-2" data-ru="Проекты и Опыт" data-en="Projects & Experience">Проекты и Опыт</a>
-            <a href="#hobbies" class="mobile-link text-accent hover:text-accenthover font-medium py-2" data-ru="Хобби" data-en="Hobbies">Хобби</a>
-            <a href="#books" class="mobile-link text-accent hover:text-accenthover font-medium py-2" data-ru="Книги" data-en="Books">Книги</a>
-            <a href="#contacts" class="mobile-link text-accent hover:text-accenthover font-medium py-2" data-ru="Контакты" data-en="Contacts">Контакты</a>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-sand border-b border-stone-200 px-6 py-4 space-y-3">
+            <a href="index.html" class="block text-brand-accent font-medium">Главная</a>
+            <a href="work.html" class="block hover:text-brand-accent">Работа</a>
+            <a href="books.html" class="block hover:text-brand-accent">Книги</a>
+            <a href="#contact" class="block hover:text-brand-accent">Связаться</a>
+            <div class="flex items-center space-x-2 text-xs pt-2 border-t border-stone-200">
+                <span class="font-bold">RU</span>
+                <span>/</span>
+                <a href="#" class="text-stone-400">EN</a>
+            </div>
         </div>
     </header>
 
-    <main class="relative z-10 pt-20">
-        <section id="hero" class="min-h-[80vh] flex items-center justify-center px-6 py-20 relative">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs tracking-wider uppercase text-accent mb-6">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> <span data-ru="6 лет опыта в Influence Marketing" data-en="6 years of experience in Influence Marketing">6 лет опыта в Influence Marketing</span>
-                </div>
-                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-accent mb-6 leading-tight" data-ru="Василина Кривенко" data-en="Vasilina Krivenko">
-                    Василина Кривенко
-                </h1>
-                <p class="text-lg sm:text-2xl font-light text-accent/90 mb-6 font-serif italic" data-ru="Influence-менеджер & Писательница" data-en="Influence Manager & Author">
-                    Influence-менеджер & Писательница
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-24 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <div class="inline-flex items-center space-x-3 text-xs tracking-widest uppercase font-semibold text-brand-accent bg-stone-200/60 px-3 py-1.5 rounded-full">
+                <span>Influence-менеджер</span>
+                <span>•</span>
+                <span>Писательница</span>
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl font-normal leading-tight">
+                Строю блогерские кампании от стратегии до отчёта ROI
+            </h1>
+            <p class="text-stone-600 text-lg leading-relaxed font-light">
+                6 лет работаю с блогерами: от закупки рекламы до руководства командой скаутов. Веду кампании для fashion, beauty и бытовой техники. Пишу остросюжетные любовные романы под именем Лина Кривенко.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#contact" class="bg-brand-dark text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-stone-800 transition-all shadow-sm">
+                    Связаться
+                </a>
+                <a href="work.html" class="border border-stone-400 text-brand-dark px-8 py-4 rounded-full text-sm font-medium hover:border-brand-dark transition-all">
+                    Скачать резюме
+                </a>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="aspect-[4/5] bg-stone-200 rounded-2xl overflow-hidden shadow-md flex items-center justify-center border border-stone-300">
+                <img src="photomoe.jpg" alt="Василина Кривенко" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="border-y border-stone-200 bg-stone-100/50">
+        <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">6 лет</div>
+                <div class="text-sm text-stone-600 font-light">в influence-маркетинге</div>
+            </div>
+            <div>
+                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">100+ млн ₽</div>
+                <div class="text-sm text-stone-600 font-light">открученного рекламного бюджета за 6 лет</div>
+            </div>
+            <div>
+                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">6 человек</div>
+                <div class="text-sm text-stone-600 font-light">в отделе скаутов под моим руководством</div>
+            </div>
+            <div>
+                <div class="font-serif text-4xl md:text-5xl font-normal text-brand-accent mb-2">3 книги</div>
+                <div class="text-sm text-stone-600 font-light">опубликованы на Литнет</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-3xl">
+            <h2 class="font-serif text-3xl md:text-4xl font-normal mb-8">Обо мне</h2>
+            <div class="space-y-6 text-stone-700 text-lg font-light leading-relaxed">
+                <p>
+                    Мой путь начался в Красноярске, потом был Екатеринбург, а сейчас я живу в Сербии и работаю с удалёнными международными проектами.
                 </p>
-                <p class="text-base sm:text-xl font-light text-accent/90 mb-10 max-w-2xl mx-auto leading-relaxed" data-ru="Превращаю творческие идеи и рекламные кампании в масштабные проекты с высокой конверсией. Создаю глубокие миры в книгах и успешные коллаборации с брендами в жизни." data-en="Turning creative ideas and ad campaigns into high-converting projects. Creating deep worlds in books and successful brand collaborations in life.">
-                    Превращаю творческие идеи и рекламные кампании в масштабные проекты с высокой конверсией. Создаю глубокие миры в книгах и успешные коллаборации с брендами в жизни.
+                <p>
+                    Получаю образование в области философии, пишу остросюжетные любовные романы под именем Лина Кривенко, люблю хоккей и путешествия. Всей душой люблю медиаполе и творческие, нестандартные подачи.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="#about" class="px-8 py-3.5 rounded-full bg-accent text-white font-semibold text-sm tracking-wider uppercase hover:bg-accenthover transition-all shadow-lg shadow-accent/20" data-ru="Обо мне" data-en="About Me">
-                        Обо мне
-                    </a>
-                    <a href="#projects" class="px-8 py-3.5 rounded-full glass-card text-accent font-semibold text-sm tracking-wider uppercase hover:border-accent transition-all" data-ru="Мои проекты" data-en="My Projects">
-                        Мои проекты
-                    </a>
-                    <a href="#books" class="px-8 py-3.5 rounded-full border border-accent/40 text-accent font-semibold text-sm tracking-wider uppercase hover:border-accent transition-all" data-ru="Мои книги" data-en="My Books">
-                        Мои книги
-                    </a>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="py-12 px-6 border-t border-b border-[#1E382B]/10 bg-white/30">
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="glass-card p-6 rounded-2xl">
-                    <p class="font-serif text-4xl font-bold text-accent mb-2" data-ru="6 лет" data-en="6 years">6 лет</p>
-                    <p class="text-xs text-accent/70 uppercase tracking-widest font-semibold" data-ru="Опыта работы" data-en="Experience">Опыта работы</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <p class="font-serif text-4xl font-bold text-accent mb-2" data-ru="3 книги" data-en="3 books">3 книги</p>
-                    <p class="text-xs text-accent/70 uppercase tracking-widest font-semibold" data-ru="Авторских произведения" data-en="Authored Works">Авторских произведения</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <p class="font-serif text-4xl font-bold text-accent mb-2" data-ru="100+ млн ₽" data-en="$1.2M+">100+ млн ₽</p>
-                    <p class="text-xs text-accent/70 uppercase tracking-widest font-semibold" data-ru="Открученного бюджета в рекламе" data-en="Ad Budget Managed">Открученного бюджета в рекламе</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Секция Обо мне -->
-        <section id="about" class="py-24 px-6 border-t border-[#1E382B]/10">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span data-ru="Биография & История" data-en="Biography & Story">Биография & История</span>
-                    </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-accent mb-4" data-ru="Обо мне" data-en="About Me">
-                        Обо мне
-                    </h2>
-                </div>
-
-                <div class="glass-card p-8 sm:p-12 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-                    <div class="md:col-span-4 flex justify-center">
-                        <img src="assets/img/photomoe.jpg" alt="Василина Кривенко" class="profile-squircle">
-                    </div>
-                    <div class="md:col-span-8 relative space-y-4">
-                        <div class="absolute -top-6 -left-6 text-accent/15 font-serif text-8xl select-none pointer-events-none hidden sm:block">“</div>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="Привет! Я Василина." data-en="Hello! I am Vasilina.">
-                            Привет! Я Василина.
-                        </p>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="Моя история начинается в атмосферном Красноярске. Потом был Екатеринбург, а сегодня я живу в Сербии." data-en="My story begins in atmospheric Krasnoyarsk. Then came Yekaterinburg, and today I live in Serbia.">
-                            Моя история начинается в атмосферном Красноярске. Потом был Екатеринбург, а сегодня я живу в Сербии.
-                        </p>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="Сейчас получаю образование в области философии и работаю с удалёнными международными проектами." data-en="Currently, I am getting a degree in philosophy and working with remote international projects.">
-                            Сейчас получаю образование в области философии и работаю с удалёнными международными проектами.
-                        </p>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="В influence-маркетинге я уже 6 лет. За это время прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний — от первых коммуникаций с авторами до разработки и реализации комплексных influencer-стратегий." data-en="I have been in influence marketing for 6 years. During this time, I went from coordinator of blogger integrations to head of large-scale advertising campaigns — from initial creator outreach to developing and executing comprehensive influencer strategies.">
-                            В influence-маркетинге я уже 6 лет. За это время прошла путь от координатора блогерских интеграций до руководителя масштабных рекламных кампаний — от первых коммуникаций с авторами до разработки и реализации комплексных influencer-стратегий.
-                        </p>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="Работала с компаниями из самых разных сфер: e-commerce, fashion, beauty, technology и стартапами." data-en="I have worked with companies across various industries: e-commerce, fashion, beauty, technology, and startups.">
-                            Работала с компаниями из самых разных сфер: e-commerce, fashion, beauty, technology и стартапами.
-                        </p>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="Мне интересно находить баланс между креативом, бизнес-задачами и живой коммуникацией с аудиторией — и превращать influence из просто рекламного инструмента в работающий элемент бренда." data-en="I am interested in finding a balance between creativity, business goals, and live communication with the audience — turning influence from a simple advertising tool into a functioning brand element.">
-                            Мне интересно находить баланс между креативом, бизнес-задачами и живой коммуникацией с аудиторией — и превращать influence из просто рекламного инструмента в работающий элемент бренда.
-                        </p>
-                        <p class="text-base sm:text-lg font-light text-accent/90 leading-relaxed relative z-10" data-ru="Сегодня я совмещаю профессиональный опыт, интерес к философии и любовь к международной среде — и продолжаю собирать собственную оптику на маркетинг, людей и коммуникации." data-en="Today, I combine professional experience, an interest in philosophy, and a love for the international environment — continuing to build my own perspective on marketing, people, and communication.">
-                            Сегодня я совмещаю профессиональный опыт, интерес к философии и любовь к международной среде — и продолжаю собирать собственную оптику на маркетинг, людей и коммуникации.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-24 px-6 border-t border-[#1E382B]/10 bg-white/25">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span data-ru="Экспертиза & Проекты" data-en="Expertise & Projects">Экспертиза & Проекты</span>
-                    </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-accent mb-4" data-ru="Чем я занимаюсь" data-en="What I Do">
-                        Чем я занимаюсь
-                    </h2>
-                    <p class="text-accent/80 font-light leading-relaxed" data-ru="Мой опыт охватывает полный цикл работы с блогерами и создание вирусного контента." data-en="My experience covers the full cycle of working with bloggers and creating viral content.">
-                        Мой опыт охватывает полный цикл работы с блогерами и создание вирусного контента.
+    <!-- Cards Section (Work & Books) -->
+    <section class="bg-stone-100/60 py-24 border-t border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Work Card -->
+            <div class="bg-brand-sand border border-stone-200 rounded-2xl p-8 md:p-12 flex flex-col justify-between hover:shadow-lg transition-shadow">
+                <div>
+                    <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-3">Направление</div>
+                    <h3 class="font-serif text-3xl mb-4">Работа</h3>
+                    <p class="text-stone-600 font-light mb-8">
+                        Influence-стратегии, блогерские кампании, UGC. Кейсы и бренды, с которыми работала.
                     </p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-                    <div class="glass-card p-8 rounded-2xl relative group transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
-                            <i data-lucide="megaphone" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-accent mb-3" data-ru="Influence-маркетинг" data-en="Influence Marketing">Influence-маркетинг</h3>
-                        <p class="text-accent/80 text-sm leading-relaxed mb-6 font-light" data-ru="Разработка стратегий продвижения брендов через блогеров на платформах YouTube, Telegram, Instagram, TikTok, MAX, Дзен, ВКонтакте с полным контролем ROI и CPC." data-en="Developing brand promotion strategies through bloggers on YouTube, Telegram, Instagram, TikTok, MAX, Zen, VK with full control of ROI and CPC.">
-                            Разработка стратегий продвижения брендов через блогеров на платформах YouTube, Telegram, Instagram, TikTok, MAX, Дзен, ВКонтакте с полным контролем ROI и CPC.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium" data-ru="Стратегия" data-en="Strategy">Стратегия</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium">ROI & CPC</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium" data-ru="Мультиплатформа" data-en="Multiplatform">Мультиплатформа</span>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl relative group transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
-                            <i data-lucide="building-2" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-accent mb-3" data-ru="Работа с брендами" data-en="Brand Collaboration">Работа с брендами</h3>
-                        <p class="text-accent/80 text-sm leading-relaxed mb-6 font-light" data-ru="Опыт сотрудничества с различными компаниями (от локальных стартапов до федеральных брендов)." data-en="Experience collaborating with various companies (from local startups to federal brands).">
-                            Опыт сотрудничества с различными компаниями (от локальных стартапов до федеральных брендов).
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium" data-ru="Стартапы" data-en="Startups">Стартапы</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium" data-ru="Федеральные бренды" data-en="Federal Brands">Федеральные бренды</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium" data-ru="Контракты" data-en="Contracts">Контракты</span>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl relative group transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-all">
-                            <i data-lucide="video" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl font-bold text-accent mb-3" data-ru="UGC & Контент-направление" data-en="UGC & Content Direction">UGC & Контент-направление</h3>
-                        <p class="text-accent/80 text-sm leading-relaxed mb-6 font-light" data-ru="Создание ТЗ для пользовательского контента (UGC), организация съемок." data-en="Creating briefs for User Generated Content (UGC), organizing shoots.">
-                            Создание ТЗ для пользовательского контента (UGC), организация съемок.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium">UGC</span>
-                            <span class="text-xs px-2.5 py-1 rounded-md bg-[#b8c5bc] text-accent font-medium" data-ru="ТЗ & Съемки" data-en="Briefs & Shoots">ТЗ & Съемки</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- БЕГУЩАЯ СТРОКА С КРУПНЫМИ ЛОГОТИПАМИ -->
-                <div class="py-6 border-t border-b border-[#1E382B]/10 bg-white/40 rounded-2xl shadow-sm overflow-hidden">
-                    <p class="text-center text-xs uppercase tracking-widest text-accent/60 font-semibold mb-6" data-ru="Бренды, с которыми я работала" data-en="Brands I've worked with">Бренды, с которыми я работала</p>
-                    <div class="marquee-container" id="marquee">
-                        <div class="marquee-track" id="marquee-track">
-                            <!-- Логотипы в нужном порядке -->
-                            <div class="brand-logo-item"><img src="assets/img/brands/mixit.jpg" alt="MIXIT"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/riche.png" alt="RICHE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/theact2.jpg" alt="THE ACT"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/toptop.jpg" alt="TOPTOP"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/voishe.png" alt="VOISHE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/cheelee.png" alt="CHEELEE"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/demiand.png" alt="DEMIAND"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/felfri.png" alt="FELFRI"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/graymoss.png" alt="GRAY MOSS"></div>
-                            <div class="brand-logo-item"><img src="assets/img/brands/twoself.jpg" alt="TWOSELF"></div>
-                        </div>
-                    </div>
-                </div>
+                <a href="work.html" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
+                    <span>Смотреть работу</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
             </div>
-        </section>
 
-        <section id="hobbies" class="py-24 px-6 border-t border-[#1E382B]/10">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span data-ru="Вдохновение" data-en="Inspiration">Вдохновение</span>
-                    </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-accent mb-4" data-ru="Мои хобби & увлечения" data-en="Hobbies & Interests">
-                        Мои хобби & увлечения
-                    </h2>
-                    <p class="text-accent/80 font-light" data-ru="То, что подпитывает мою креативность, дает силы для новых проектов и вдохновляет на написание историй." data-en="What fuels my creativity, gives strength for new projects, and inspires story writing.">
-                        То, что подпитывает мою креативность, дает силы для новых проектов и вдохновляет на написание историй.
+            <!-- Books Card -->
+            <div class="bg-brand-sand border border-stone-200 rounded-2xl p-8 md:p-12 flex flex-col justify-between hover:shadow-lg transition-shadow">
+                <div>
+                    <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-3">Творчество</div>
+                    <h3 class="font-serif text-3xl mb-4">Книги</h3>
+                    <p class="text-stone-600 font-light mb-8">
+                        Остросюжетные любовные романы под именем Лина Кривенко. Цикл Vesper Bond и новые истории на Литнет.
                     </p>
                 </div>
+                <a href="books.html" class="inline-flex items-center space-x-2 text-brand-dark font-medium hover:text-brand-accent transition-colors">
+                    <span>Все книги</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
-                        <i data-lucide="feather" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-accent" data-ru="Dark Romance & Художественная литература" data-en="Dark Romance & Fiction">Dark Romance & Художественная литература</span>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
-                        <i data-lucide="palette" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-accent" data-ru="AI Art & Визуальные концепты" data-en="AI Art & Visual Concepts">AI Art & Визуальные концепты</span>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
-                        <i data-lucide="compass" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-accent" data-ru="Путешествия & новые места" data-en="Travel & New Places">Путешествия & новые места</span>
-                    </div>
-                    <div class="glass-card p-8 rounded-2xl text-center flex flex-col items-center justify-center gap-4 hover:border-accent/50 transition-all">
-                        <i data-lucide="trophy" class="w-8 h-8 text-accent"></i>
-                        <span class="text-sm font-medium text-accent" data-ru="Хоккей" data-en="Hockey">Хоккей</span>
-                    </div>
+    <!-- Brand Marquee Section -->
+    <section class="py-20 border-t border-stone-200 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 mb-10 text-center">
+            <h3 class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Бренды, с которыми я работала</h3>
+        </div>
+        <div class="flex space-x-12 animate-marquee whitespace-nowrap text-stone-400 font-serif text-xl md:text-2xl justify-center items-center flex-wrap gap-8">
+            <span class="hover:text-brand-dark transition-colors">MIXIT</span>
+            <span class="hover:text-brand-dark transition-colors">RICHE</span>
+            <span class="hover:text-brand-dark transition-colors">THE ACT</span>
+            <span class="hover:text-brand-dark transition-colors">TOPTOP</span>
+            <span class="hover:text-brand-dark transition-colors">VOISHE</span>
+            <span class="hover:text-brand-dark transition-colors">CHEELEE</span>
+            <span class="hover:text-brand-dark transition-colors">DEMIAND</span>
+            <span class="hover:text-brand-dark transition-colors">FELFRI</span>
+            <span class="hover:text-brand-dark transition-colors">GRAY MOSS</span>
+            <span class="hover:text-brand-dark transition-colors">TWOSELF</span>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-brand-dark text-brand-sand py-24">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="font-serif text-3xl md:text-4xl mb-4 font-normal">Открыта к проектам в influence-маркетинге и коллаборациям с брендами</h2>
+                <p class="text-stone-400 font-light mb-8">Напишите, что нужно сделать и в какие сроки. Отвечу в течение дня.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="mailto:vasilinakzlv@gmail.com" class="hover:text-brand-accent transition-colors"><i class="fa-regular fa-envelope mr-2"></i> vasilinakzlv@gmail.com</a>
+                    <a href="https://t.me/vsnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-telegram mr-2"></i> Telegram</a>
+                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
+                    <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-book mr-2"></i> Литнет</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Секция Книг -->
-        <section id="books" class="py-24 px-6 border-t border-[#1E382B]/10 bg-white/25">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span data-ru="Писательство" data-en="Writing">Писательство</span>
-                    </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-accent mb-4" data-ru="Мои книги" data-en="My Books">
-                        Мои книги
-                    </h2>
-                    <p class="text-accent/80 font-light" data-ru="Изданные произведения под авторским именем Лина Кривенко. Погружение в сложные эмоции, атмосферные миры и человеческие судьбы." data-en="Published works under the pen name Lina Krivenko. Immersion in complex emotions, atmospheric worlds, and human destinies.">
-                        Изданные произведения под авторским именем <strong>Лина Кривенко</strong>. Погружение в сложные эмоции, атмосферные миры и человеческие судьбы.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Book 1: Vesper -->
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-[#1E382B]/10">
-                            <img src="assets/img/photo_2026-07-29_03-29-28.jpg" alt="VESPER" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between">
-                            <div>
-                                <span class="text-xs uppercase tracking-widest text-accent font-semibold" data-ru="Роман / Драма" data-en="Romance / Drama">Роман / Драма</span>
-                                <h3 class="font-serif text-xl font-bold text-accent mt-1 mb-2">VESPER</h3>
-                                <p class="text-accent/85 text-xs font-light leading-relaxed mb-6" data-ru="История о поиске света в темноте, переплетении человеческих судеб и неизбежности выбора." data-en="A story about finding light in the dark, the intertwining of human destinies, and the inevitability of choice.">
-                                    История о поиске света в темноте, переплетении человеческих судеб и неизбежности выбора.
-                                </p>
-                            </div>
-                            <a href="https://litnet.com/ru/book/vesper-b616988" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all" data-ru="Читать на Литнет" data-en="Read on Litnet">
-                                Читать на Литнет <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Book 2: Vinculum -->
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-[#1E382B]/10">
-                            <img src="assets/img/vinculum.jpg" alt="VINCULUM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between">
-                            <div>
-                                <span class="text-xs uppercase tracking-widest text-accent font-semibold" data-ru="Триллер / Психология" data-en="Thriller / Psychology">Триллер / Психология</span>
-                                <h3 class="font-serif text-xl font-bold text-accent mt-1 mb-2">VINCULUM</h3>
-                                <p class="text-accent/85 text-xs font-light leading-relaxed mb-6" data-ru="Неразрывные связи, ментальные ловушки и расплата за тайны прошлого." data-en="Inseparable bonds, mental traps, and retribution for the secrets of the past.">
-                                    Неразрывные связи, ментальные ловушки и расплата за тайны прошлого.
-                                </p>
-                            </div>
-                            <a href="https://litnet.com/ru/book/vinculum-b630681" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all" data-ru="Читать на Литнет" data-en="Read on Litnet">
-                                Читать на Литнет <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Book 3: Venezia Nera -->
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
-                        <div class="h-80 bg-slate-100 relative overflow-hidden flex flex-col items-center justify-center border-b border-[#1E382B]/10">
-                            <img src="assets/img/74321349.webp" alt="VENEZIA NERA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between">
-                            <div>
-                                <span class="text-xs uppercase tracking-widest text-accent font-semibold" data-ru="Нуар / Детектив" data-en="Noir / Detective">Нуар / Детектив</span>
-                                <h3 class="font-serif text-xl font-bold text-accent mt-1 mb-2">VENEZIA NERA</h3>
-                                <p class="text-accent/85 text-xs font-light leading-relaxed mb-6" data-ru="Мрачная изнанка каналов старой Венеции, где маски скрывают истинные лица." data-en="The dark underside of old Venice's canals, where masks conceal true faces.">
-                                    Мрачная изнанка каналов старой Венеции, где маски скрывают истинные лица.
-                                </p>
-                            </div>
-                            <a href="https://litnet.com/ru/book/venezia-nera-b631092" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-accent/40 text-accent text-xs font-semibold uppercase tracking-wider hover:bg-accent hover:text-white transition-all" data-ru="Читать на Литнет" data-en="Read on Litnet">
-                                Читать на Литнет <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex flex-col justify-end items-start md:items-end space-y-4">
+                <div class="text-xs text-stone-500">© 2026 Василина Кривенко Influence-менеджер и писательница</div>
             </div>
-        </section>
-
-        <!-- Контакты -->
-        <section id="contacts" class="py-24 px-6 border-t border-[#1E382B]/10">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent font-semibold mb-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span data-ru="На связи" data-en="Get in Touch">На связи</span>
-                </div>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-accent mb-4" data-ru="Давайте создадим что-то прекрасное вместе" data-en="Let's create something beautiful together">
-                    Давайте создадим что-то прекрасное вместе
-                </h2>
-                <p class="text-accent/80 font-light max-w-xl mx-auto mb-12" data-ru="Открыта к предложениям по influence-маркетингу, рекламным кампаниям, сотрудничеству с брендами и творческим коллаборациям." data-en="Open to proposals regarding influence marketing, advertising campaigns, brand collaborations, and creative projects.">
-                    Открыта к предложениям по influence-маркетингу, рекламным кампаниям, сотрудничеству с брендами и творческим коллаборациям.
-                </p>
-
-                <div class="inline-flex items-center gap-6 text-accent">
-                    <!-- Telegram -->
-                    <a href="https://t.me/vsnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Telegram"><i data-lucide="send" class="w-5 h-5"></i></a>
-                    
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Instagram">
-                        <svg class="w-5 h-5 fill-none stroke-current stroke-[2]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    </a>
-
-                    <!-- Litnet Profile -->
-                    <a href="https://litnet.com/ru/lina-krivenko-u13279836" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:border-accent hover:text-accent transition-all shadow-sm" title="Litnet Author Profile"><i data-lucide="book" class="w-5 h-5"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Кнопка «Наверх» -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center shadow-lg hover:bg-accenthover hover:scale-105 transition-all" title="Наверх">
-        <i data-lucide="arrow-up" class="w-5 h-5"></i>
-    </button>
-
-    <footer class="py-12 px-6 border-t border-[#1E382B]/10 bg-[#b8c5bc] text-center text-xs text-accent">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 <span data-ru="Василина Кривенко" data-en="Vasilina Krivenko">Василина Кривенко</span>. <span data-ru="Все права защищены." data-en="All rights reserved.">Все права защищены.</span></p>
-            <p class="font-light" data-ru="Influence-менеджер & Писательница" data-en="Influence Manager & Author">Influence-менеджер & Писательница</p>
         </div>
     </footer>
 
-    <!-- Скрипт -->
+    <!-- Mobile Menu Script -->
     <script>
-        lucide.createIcons();
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Флаги
-        const flagRuSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 9 6"><rect fill="#fff" width="9" height="3"/><rect fill="#0039a6" y="2" width="9" height="2"/><rect fill="#d52b1e" y="4" width="9" height="2"/></svg>';
-        const flagGbSvg = '<svg class="w-5 h-3.5 rounded-sm shadow-sm" viewBox="0 0 60 30"><clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="t"><path d="M30,15 h30 v15 z v-15 h-30 z h-30 v-15 z v15 h30 z"/></clipPath><g clip-path="url(#s)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>';
-
-        const langMenuBtn = document.getElementById('lang-menu-btn');
-        const langDropdown = document.getElementById('lang-dropdown');
-        const currentFlag = document.getElementById('current-flag');
-        const currentLangText = document.getElementById('current-lang-text');
-
-        langMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.toggle('hidden');
-        });
-
-        document.addEventListener('click', () => {
-            langDropdown.classList.add('hidden');
-        });
-
-        let currentLang = 'ru';
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            if (lang === 'ru') {
-                currentFlag.innerHTML = flagRuSvg;
-                currentLangText.textContent = 'Русский';
-            } else {
-                currentFlag.innerHTML = flagGbSvg;
-                currentLangText.textContent = 'English';
-            }
-
-            document.querySelectorAll('[data-ru]').forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
-            });
-
-            langDropdown.classList.add('hidden');
-        }
-
-        // Кнопка «Наверх»
-        const backToTopBtn = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Бегущая строка
-        const track = document.getElementById('marquee-track');
-        if (track) {
-            track.innerHTML += track.innerHTML;
-            let scrollPosition = 0;
-            const speed = 0.8;
-
-            function animateMarquee() {
-                scrollPosition += speed;
-                if (scrollPosition >= track.scrollWidth / 2) {
-                    scrollPosition = 0;
-                }
-                track.style.transform = `translateX(-${scrollPosition}px)`;
-                requestAnimationFrame(animateMarquee);
-            }
-
-            requestAnimationFrame(animateMarquee);
-        }
     </script>
 </body>
 </html>
