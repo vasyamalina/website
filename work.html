@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа — Василина Кривенко</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1A1A1A',
+                            sand: '#F7F4F0',
+                            accent: '#8C6D53',
+                            muted: '#666666'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-sand text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-brand-sand/90 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-xl font-medium tracking-wide">Василина Кривенко</a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-brand-accent transition-colors">Главная</a>
+                <a href="work.html" class="text-brand-accent border-b border-brand-accent pb-0.5">Работа</a>
+                <a href="books.html" class="hover:text-brand-accent transition-colors">Книги</a>
+                <a href="#contact" class="hover:text-brand-accent transition-colors">Связаться</a>
+                <div class="flex items-center space-x-2 text-xs border-l border-stone-300 pl-6">
+                    <span class="font-bold">RU</span>
+                    <span class="text-stone-400">/</span>
+                    <a href="#" class="text-stone-400 hover:text-brand-dark transition-colors">EN</a>
+                </div>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-sand border-b border-stone-200 px-6 py-4 space-y-3">
+            <a href="index.html" class="block hover:text-brand-accent">Главная</a>
+            <a href="work.html" class="block text-brand-accent font-medium">Работа</a>
+            <a href="books.html" class="block hover:text-brand-accent">Книги</a>
+            <a href="#contact" class="block hover:text-brand-accent">Связаться</a>
+            <div class="flex items-center space-x-2 text-xs pt-2 border-t border-stone-200">
+                <span class="font-bold">RU</span>
+                <span>/</span>
+                <a href="#" class="text-stone-400">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Work Hero -->
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-16">
+        <div class="max-w-3xl">
+            <h1 class="font-serif text-4xl md:text-6xl font-normal mb-6">Influence-маркетинг</h1>
+            <p class="text-stone-600 text-lg font-light leading-relaxed">
+                6 лет с блогерами: от закупки рекламы до руководства командой скаутов.
+            </p>
+        </div>
+    </section>
+
+    <!-- My Journey Timeline / History -->
+    <section class="max-w-6xl mx-auto px-6 py-12 border-t border-stone-200">
+        <h2 class="font-serif text-3xl mb-10">Мой путь</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-stone-100/60 p-6 rounded-2xl border border-stone-200">
+                <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-2">С 12 лет</div>
+                <p class="text-stone-700 font-light text-sm">Вела мемные паблики, покупала и продавала рекламу. Общая аудитория 406 тыс. подписчиков.</p>
+            </div>
+            <div class="bg-stone-100/60 p-6 rounded-2xl border border-stone-200">
+                <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-2">С 14 лет</div>
+                <p class="text-stone-700 font-light text-sm">Перешла в SMM-копирайтинг и таргетированную рекламу в Facebook.</p>
+            </div>
+            <div class="bg-stone-100/60 p-6 rounded-2xl border border-stone-200">
+                <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-2">Затем</div>
+                <p class="text-stone-700 font-light text-sm">Полностью переключилась на influence. Начинала с косметики и бытовой техники.</p>
+            </div>
+            <div class="bg-stone-100/60 p-6 rounded-2xl border border-stone-200">
+                <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-2">Последние 6 лет</div>
+                <ul class="text-stone-700 font-light text-sm space-y-1">
+                    <li>• Полный цикл коммерческой и бартерной рекламы</li>
+                    <li>• До 200 интеграций в месяц</li>
+                    <li>• Бюджеты от 100 тыс. до 6 млн ₽ / месяц</li>
+                    <li>• ROAS: 160-300+</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do (Services) -->
+    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-200">
+        <h2 class="font-serif text-3xl mb-10">Чем занимаюсь</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-stone-100/60 p-8 rounded-2xl border border-stone-200">
+                <h3 class="font-serif text-xl mb-3">Полный цикл работы с блогерами</h3>
+                <p class="text-stone-600 font-light text-sm leading-relaxed">
+                    Подбор площадок и авторов, переговоры, написание ТЗ, согласование материалов и контроль метрик. Закуп рекламы на площадках: Telegram, YouTube, Instagram, MAX, Дзен, TikTok, ВКонтакте, Likee.
+                </p>
+            </div>
+            <div class="bg-stone-100/60 p-8 rounded-2xl border border-stone-200">
+                <h3 class="font-serif text-xl mb-3">Договоры и маркировка</h3>
+                <p class="text-stone-600 font-light text-sm leading-relaxed">
+                    Оформление договоров и маркировка рекламы. Понимание законодательства РФ и владение опытом работы с ОРД.
+                </p>
+            </div>
+            <div class="bg-stone-100/60 p-8 rounded-2xl border border-stone-200">
+                <h3 class="font-serif text-xl mb-3">UGC и контент-заводы</h3>
+                <p class="text-stone-600 font-light text-sm leading-relaxed">
+                    Создание контент-заводов и запуск от 3 до 11 креаторов. Согласование материалов, организация съёмок, ведение UGC-креаторов.
+                </p>
+            </div>
+            <div class="bg-stone-100/60 p-8 rounded-2xl border border-stone-200">
+                <h3 class="font-serif text-xl mb-3">Руководство командой скаутов</h3>
+                <p class="text-stone-600 font-light text-sm leading-relaxed">
+                    Руководство отделом скаутов из 6 человек, распределение бюджета и контроль метрик.
+                </p>
+            </div>
+        </div>
+
+        <!-- Metrics bar -->
+        <div class="mt-12 bg-brand-dark text-brand-sand p-8 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+            <span class="font-serif text-lg">Считаю и анализирую метрики:</span>
+            <div class="flex flex-wrap gap-4 text-xs tracking-widest uppercase font-semibold text-stone-300">
+                <span class="bg-stone-800 px-3 py-1.5 rounded">CPM</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">ROI</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">CPC</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">ROAS</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">CTR</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">ER</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">CPA</span>
+                <span class="bg-stone-800 px-3 py-1.5 rounded">ДРР (по запросу)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-stone-200">
+        <h2 class="font-serif text-3xl mb-10">Кейсы</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-stone-100/60 p-8 rounded-2xl border border-stone-200 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-serif text-2xl">Gray Moss</h3>
+                    <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700">Fashion</span>
+                </div>
+                <ul class="space-y-2 text-stone-600 font-light text-sm">
+                    <li>• Полный цикл работы с блогерами: подбор, написание ТЗ, согласование материалов, маркировка и ведение документооборота</li>
+                    <li>• Коммерческая реклама с бюджетами от 1,5 млн ₽</li>
+                    <li>• Площадки закупа: Instagram, TikTok, Telegram</li>
+                    <li>• Рассылка PR-подарков</li>
+                    <li>• Амбассадорство: работа с амбассадорами бренда</li>
+                    <li class="font-medium text-brand-dark pt-2">Результаты под NDA</li>
+                </ul>
+            </div>
+
+            <div class="bg-stone-100/60 p-8 rounded-2xl border border-stone-200 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-serif text-2xl">The Act</h3>
+                    <span class="text-xs uppercase tracking-widest bg-stone-200 px-3 py-1 rounded-full text-stone-700">Beauty</span>
+                </div>
+                <ul class="space-y-2 text-stone-600 font-light text-sm">
+                    <li>• Полный цикл работы с блогерами: подбор, написание ТЗ, согласование материалов, маркировка и ведение документооборота</li>
+                    <li>• Коммерческая реклама с бюджетами от 6 млн ₽</li>
+                    <li>• Площадки закупа: ВКонтакте, Дзен, MAX, YouTube, Telegram</li>
+                    <li class="font-medium text-brand-dark pt-2">Результаты под NDA</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="mt-12 bg-stone-100/60 p-8 md:p-12 rounded-2xl border border-stone-200">
+            <div class="text-xs uppercase tracking-widest text-brand-accent font-semibold mb-4">Отзывы</div>
+            <blockquote class="font-serif italic text-lg md:text-xl text-stone-800 mb-6 leading-relaxed">
+                «Василина была частью нашей команды и проявила себя как талантливый и преданный сотрудник. Она является профессионалом в своей области и всегда старается предоставить наивысший уровень работоспособности и целеустремлённости. Она обладает креативным мышлением, демонстрирует лидерские качества и отличные навыки управления командами. Отличается высокой ответственностью на всех этапах работы.»
+            </blockquote>
+            <div class="text-sm font-medium text-stone-700">Алексей</div>
+            <div class="text-xs text-stone-500">Руководитель маркетинга, компания не раскрывается по просьбе автора отзыва</div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="bg-brand-dark text-brand-sand py-24 mt-16">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="font-serif text-3xl md:text-4xl mb-4 font-normal">Открыта к проектам в influence-маркетинге и коллаборациям с брендами</h2>
+                <p class="text-stone-400 font-light mb-8">Напишите, что нужно сделать и в какие сроки. Отвечу в течение дня.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="mailto:vasilinakzlv@gmail.com" class="hover:text-brand-accent transition-colors"><i class="fa-regular fa-envelope mr-2"></i> vasilinakzlv@gmail.com</a>
+                    <a href="https://t.me/vsnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-telegram mr-2"></i> Telegram</a>
+                    <a href="https://www.instagram.com/vslnmln" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
+                    <a href="https://litnet.com/ru/lina-krivenko-u12684992" target="_blank" class="hover:text-brand-accent transition-colors"><i class="fa-solid fa-book mr-2"></i> Литнет</a>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end items-start md:items-end space-y-4">
+                <div class="flex flex-wrap gap-4 text-xs text-stone-400 mb-2">
+                    <span class="hover:text-white">RICHE</span>
+                    <span class="hover:text-white">THE ACT</span>
+                    <span class="hover:text-white">TOPTOP</span>
+                    <span class="hover:text-white">VOISHE</span>
+                    <span class="hover:text-white">CHEELEE</span>
+                    <span class="hover:text-white">DEMIAND</span>
+                    <span class="hover:text-white">FELFRI</span>
+                    <span class="hover:text-white">GRAY MOSS</span>
+                </div>
+                <div class="text-xs text-stone-500">© 2026 Василина Кривенко Influence-менеджер и писательница</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
