@@ -90,6 +90,22 @@ a{color:#D98B5F}a:hover{color:#E8A87A}
 </section>
 <footer style="max-width:1160px;margin:0 auto;padding:28px 24px;color:#9C8870;font-size:14px">© 2026 Василина Кривенко · Influence-менеджер и писательница</footer>
 </div>
-<button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх" style="position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;background:#D98B5F;color:#FFFFFF;border:none;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:50">↑</button>
+<button type="button" id="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх" style="position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:#D98B5F;color:#FFFFFF;border:none;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;pointer-events:none;transition:opacity .25s ease">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById("backtotop");
+  function update(){
+    var doc = document.documentElement;
+    var nearTop = window.scrollY < 350;
+    var nearBottom = (window.scrollY + window.innerHeight) > (doc.scrollHeight - 260);
+    var show = !nearTop && !nearBottom;
+    btn.style.opacity = show ? "1" : "0";
+    btn.style.pointerEvents = show ? "auto" : "none";
+  }
+  window.addEventListener("scroll", update, {passive:true});
+  window.addEventListener("resize", update);
+  update();
+})();
+</script>
 </body>
 </html>
