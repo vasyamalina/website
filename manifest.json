@@ -1,0 +1,27 @@
+{
+  "name": "Лина Кривенко",
+  "short_name": "Лина Кривенко",
+  "description": "Писательница и influence-менеджер",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F3EC",
+  "theme_color": "#4F7A52",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
