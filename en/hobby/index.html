@@ -156,6 +156,13 @@ function hcarGoTo(car, idx){
   var dots = car.querySelectorAll('.hcar-dot');
   for (var i=0;i<dots.length;i++){ dots[i].style.background = i===idx ? '#1A1A1A' : 'rgba(242,232,218,.4)'; }
 }
+// после загрузки страницы подгружаем остальные слайды в фоне, чтобы они были готовы до листания
+function hcarHydrateAll(){
+  document.querySelectorAll('.hcar img[data-src]').forEach(function(img){ img.src = img.dataset.src; delete img.dataset.src; });
+  document.querySelectorAll('.hcar source[data-srcset]').forEach(function(s){ s.srcset = s.dataset.srcset; delete s.dataset.srcset; });
+}
+window.addEventListener('load', function(){ setTimeout(hcarHydrateAll, 200); });
+if (document.readyState === 'complete') { setTimeout(hcarHydrateAll, 200); }
 function hcarMove(btn, dir){
   var car = btn.closest('.hcar');
   hcarGoTo(car, parseInt(car.dataset.index||'0',10) + dir);
