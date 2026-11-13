@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Страница не найдена — Василина Кривенко</title>
+<meta name="robots" content="noindex">
+<script>(function(){try{if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;700&display=swap">
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/favicon/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#F8F3EC;--text:#1A1A1A;--sub:#595959;--green:#4F7A52;--border:#E8DFD3}
+html[data-theme="dark"]{--bg:#1A1A1A;--text:#F2E8DA;--sub:#A09080;--border:#2E2E2E}
+html{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+body{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;background:var(--bg)}
+.num{font-family:'Playfair Display',serif;font-size:clamp(80px,20vw,160px);font-weight:700;color:var(--green);line-height:1;margin-bottom:16px;opacity:.18}
+h1{font-family:'Playfair Display',serif;font-size:clamp(22px,5vw,32px);font-weight:500;margin-bottom:12px}
+p{color:var(--sub);font-size:16px;line-height:1.6;max-width:400px;margin-bottom:40px}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn-main{background:var(--green);color:#fff;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:500;font-size:15px}
+.btn-sec{border:1px solid var(--green);color:var(--green);text-decoration:none;padding:12px 24px;border-radius:8px;font-size:15px}
+</style>
+</head>
+<body>
+<div class="num">404</div>
+<h1>Страница не найдена</h1>
+<p>Такой страницы не существует или она была перемещена.</p>
+<div class="links">
+  <a href="/" class="btn-main">На главную</a>
+  <a href="/book" class="btn-sec">Книги</a>
+</div>
+<script>
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
+  if(!document.documentElement.hasAttribute('data-theme-manual')){
+    document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+  }
+});
+</script>
+</body>
+</html>
