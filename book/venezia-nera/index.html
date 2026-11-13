@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;700&display=swap">
 <style>
+#read-time{font-size:13px;color:#888;margin-bottom:8px}.star-rating{display:flex;gap:4px;margin:32px 0 8px;justify-content:center}.star-rating button{background:none;border:none;font-size:28px;cursor:pointer;color:#ccc;padding:0;line-height:1;transition:color .15s}.star-rating button.lit{color:#4F7A52}.star-label{text-align:center;font-size:13px;color:#888;margin-bottom:24px;min-height:18px}
 #read-progress{position:fixed;top:0;left:0;height:3px;background:#4F7A52;width:0%;z-index:100;transition:width .1s linear}
 html{scroll-behavior:smooth}
 body{margin:0}
@@ -67,6 +68,7 @@ html[data-theme="dark"] .reader-tab.active{color:#F2F4F0;border-bottom-color:#7F
 <meta property="og:image" content="https://linakrivenko.com/assets/img/venezianera.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://linakrivenko.com/assets/img/venezianera.jpg">
+<link rel="canonical" href="https://linakrivenko.com/book/venezia-nera">
 </head>
 <div id="read-progress"></div>
 <body style="margin:0">
@@ -89,6 +91,7 @@ html[data-theme="dark"] .reader-tab.active{color:#F2F4F0;border-bottom-color:#7F
 <span style="font-size:14px;color:#8C8C8C">Отдельный роман &middot; 18+</span>
 </div>
 <h1 style="margin:10px 0 28px;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(28px,7vw,42px)">VENEZIA NERA</h1>
+<p id="read-time">≈ 9 мин · 1851 слов</p>
 <div style="border-bottom:1px solid #9CB393;margin-bottom:8px">
 <button type="button" class="reader-tab active" id="tab-0" onclick="showPage(0)">Пролог</button>
 <button type="button" class="reader-tab" id="tab-1" onclick="showPage(1)">Глава 1</button>
@@ -202,6 +205,15 @@ html[data-theme="dark"] .reader-tab.active{color:#F2F4F0;border-bottom-color:#7F
 </section>
 <footer style="max-width:1160px;margin:0 auto;padding:28px 24px;color:#8C8C8C;font-size:14px">&copy; 2026 Лина Кривенко</footer>
 </div>
+
+<div class="star-rating" id="star-rating" aria-label="Оценить">
+  <button type="button" data-v="1" onclick="ratePage(1)" aria-label="1 звезда">★</button>
+  <button type="button" data-v="2" onclick="ratePage(2)" aria-label="2 звезды">★</button>
+  <button type="button" data-v="3" onclick="ratePage(3)" aria-label="3 звезды">★</button>
+  <button type="button" data-v="4" onclick="ratePage(4)" aria-label="4 звезды">★</button>
+  <button type="button" data-v="5" onclick="ratePage(5)" aria-label="5 звёзд">★</button>
+</div>
+<p class="star-label" id="star-label"></p>
 <button type="button" id="sharebtn" onclick="sharePage()" aria-label="Поделиться" style="position:fixed;right:16px;bottom:68px;width:44px;height:44px;border-radius:50%;background:#4F7A52;color:#FFFFFF;border:none;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;z-index:50">&#8599;</button>
 <button type="button" id="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх" style="position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:#4F7A52;color:#FFFFFF;border:none;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;pointer-events:none;transition:opacity .25s ease">&uarr;</button>
 <script>
@@ -291,6 +303,25 @@ function sharePage(){
     });
   }
 }
+
+
+// звёздочки
+(function(){
+  var key = 'rating_' + location.pathname;
+  var labels = ['','Не понравилось','Так себе','Неплохо','Хорошо','Отлично!'];
+  function setRating(v){
+    document.querySelectorAll('.star-rating button').forEach(function(btn){
+      btn.classList.toggle('lit', parseInt(btn.dataset.v,10) <= v);
+    });
+    var lbl = document.getElementById('star-label');
+    if(lbl) lbl.textContent = v ? labels[v] : '';
+  }
+  try{ var saved = localStorage.getItem(key); if(saved) setRating(parseInt(saved,10)); }catch(e){}
+  window.ratePage = function(v){
+    try{ localStorage.setItem(key, v); }catch(e){}
+    setRating(v);
+  };
+})();
 
 </script>
 </body>
