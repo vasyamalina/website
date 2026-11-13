@@ -54,11 +54,13 @@ html[data-theme="dark"] a:hover{color:#9FC9A0}
 html[data-theme="dark"] .nav-toggle{border-color:#2E362C !important;color:#F2F4F0 !important}
 html[data-theme="dark"] .theme-toggle{border-color:#2E362C !important;color:#F2F4F0 !important}
 /* about-buttons */
-.abtn{display:inline-block;padding:11px 20px;border-radius:8px;background:#2F4A33;color:#FFFFFF !important;font-weight:500;font-size:15px;line-height:1.3;text-decoration:none !important}
-.abtn:hover{background:#1F3523;color:#FFFFFF !important}
-html[data-theme="dark"] .abtn{background:#3B5D3E;border:1px solid #5C8F5F;color:#FFFFFF !important}
-html[data-theme="dark"] .abtn:hover{background:#4F7A52}
-@media (max-width:680px){.abtn{padding:10px 18px;font-size:14px !important}}
+.abtns{display:flex;flex-wrap:nowrap;gap:8px;padding-top:16px}
+.abtn{display:inline-block;padding:7px 13px;border-radius:999px;border:1.5px solid #2F4A33;background:transparent;color:#2F4A33 !important;font-weight:500;font-size:13px !important;line-height:1.2;text-decoration:none !important;white-space:nowrap;transition:background .15s,color .15s}
+.abtn:hover{background:#2F4A33;color:#FFFFFF !important}
+html[data-theme="dark"] .abtn{border-color:#7FAE82;color:#B8D6BA !important}
+html[data-theme="dark"] .abtn:hover{background:#3B5D3E;color:#FFFFFF !important}
+@media (max-width:420px){.abtn{padding:6px 10px;font-size:12px !important}.abtns{gap:6px}}
+@media (max-width:340px){.abtns{flex-wrap:wrap}}
 </style>
 <meta name="description" content="Лина Кривенко — писательница, студентка философского факультета, специалист по influence-маркетингу. Родилась в Красноярске, живёт в Белграде.">
 <meta property="og:type" content="website">
@@ -111,7 +113,7 @@ html[data-theme="dark"] .abtn:hover{background:#4F7A52}
 <section style="max-width:1160px;margin:0 auto;padding:32px 24px 24px">
 <div style="max-width:720px;display:flex;flex-direction:column;gap:22px">
 <p style="margin:0;font-size:18px;line-height:1.75;color:#333333">Родилась в Красноярске — городе, где зима длится полгода и учишься ценить каждый тёплый день. Несколько лет прожила в Екатеринбурге, потом решилась на большой шаг и переехала в Белград. Город оказался именно таким, каким должен быть — шумным, тёплым и немного хаотичным.</p><p style="margin:0;font-size:18px;line-height:1.75;color:#333333">Пишу книги. Это началось не как план, а как необходимость — истории просто не умещались внутри и просились на страницы. Сейчас у меня три романа, каждый из которых — отдельный мир со своей атмосферой и своими героями, которые иногда ведут себя совсем не так, как я задумывала.</p><p style="margin:0;font-size:18px;line-height:1.75;color:#333333">Параллельно учусь на философском факультете — и это, как ни странно, очень помогает в текстах. Когда постоянно думаешь о природе вещей и смысле слов, иначе начинаешь строить предложения.</p><p style="margin:0;font-size:18px;line-height:1.75;color:#333333">Работаю в инфлюенс-маркетинге — и это не просто профессия, это отдельная любовь. Реклама, когда она сделана честно, это искусство: найти человека, который говорит с аудиторией на одном языке, выстроить историю так, чтобы она не продавала, а цепляла. Я помогаю брендам и авторам рассказывать о себе через блогеров и соцсети — так, чтобы это звучало естественно и попадало точно в своих людей. Мне нравится этот баланс между аналитикой и творчеством, между цифрами и живыми эмоциями.</p><p style="margin:0;font-size:18px;line-height:1.75;color:#333333">Изучаю иностранные языки — потому что каждый язык это отдельный способ думать. Танцую. Разукрашиваю картинки по вечерам, когда нужно отключить голову и просто быть.</p><p style="margin:0;font-size:18px;line-height:1.75;color:#333333">Люблю лето, тёплое море и холодный кофе — желательно всё одновременно. Обожаю кошек, своей пока нет, но это временно. Слежу за хоккеем и искренне мечтаю однажды оказаться на матче НХЛ — живьём, с хот-догом и огромным шарфом любимой команды.</p>
-<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:16px"><a href="/book" class="abtn">Читать книги →</a><a href="/work" class="abtn">Моя работа →</a><a href="/hobby" class="abtn">Хобби →</a></div>
+<div class="abtns"><a href="/book" class="abtn">Читать книги →</a><a href="/work" class="abtn">Моя работа →</a><a href="/hobby" class="abtn">Хобби →</a></div>
 </div>
 </section>
 <section id="contacts" style="background:#B7C8B1;color:#1A1A1A;padding:88px 24px;margin-top:48px">
