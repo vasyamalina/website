@@ -230,14 +230,6 @@ html[data-theme="dark"] .reader-tab.active{color:#F2F4F0;border-bottom-color:#7F
 </div>
 </section>
 <section id="reader-nav" style="max-width:760px;margin:0 auto;padding:28px 24px 56px">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:12px;padding-top:24px;border-top:1px solid #9CB393">
-<div style="flex:1;min-width:120px"><button type="button" id="prevBtn" onclick="prevPage()" style="display:none;border:1px solid #9CB393;background:none;color:#1A1A1A;padding:11px 20px;border-radius:8px;cursor:pointer;font-size:15px;font-family:Inter,system-ui,sans-serif">&larr; Prologue</button></div>
-<div style="flex:1;min-width:120px;text-align:right"><button type="button" id="nextBtn" onclick="nextPage()" style="border:1px solid #9CB393;background:none;color:#1A1A1A;padding:11px 20px;border-radius:8px;cursor:pointer;font-size:15px;font-family:Inter,system-ui,sans-serif">Chapter 1: Theatre of the Dead &rarr;</button></div>
-</div>
-</section>
-<footer style="max-width:1160px;margin:0 auto;padding:28px 24px;color:#8C8C8C;font-size:14px">&copy; 2026 Lina Krivenko</footer>
-</div>
-
 <div class="star-rating" id="star-rating" aria-label="Оценить">
   <button type="button" data-v="1" onclick="ratePage(1)" aria-label="1 звезда">★</button>
   <button type="button" data-v="2" onclick="ratePage(2)" aria-label="2 звезды">★</button>
@@ -246,6 +238,14 @@ html[data-theme="dark"] .reader-tab.active{color:#F2F4F0;border-bottom-color:#7F
   <button type="button" data-v="5" onclick="ratePage(5)" aria-label="5 звёзд">★</button>
 </div>
 <p class="star-label" id="star-label"></p>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:12px;padding-top:24px;border-top:1px solid #9CB393">
+<div style="flex:1;min-width:120px"><button type="button" id="prevBtn" onclick="prevPage()" style="display:none;border:1px solid #9CB393;background:none;color:#1A1A1A;padding:11px 20px;border-radius:8px;cursor:pointer;font-size:15px;font-family:Inter,system-ui,sans-serif">&larr; Prologue</button></div>
+<div style="flex:1;min-width:120px;text-align:right"><button type="button" id="nextBtn" onclick="nextPage()" style="border:1px solid #9CB393;background:none;color:#1A1A1A;padding:11px 20px;border-radius:8px;cursor:pointer;font-size:15px;font-family:Inter,system-ui,sans-serif">Chapter 1: Theatre of the Dead &rarr;</button></div>
+</div>
+</section>
+<footer style="max-width:1160px;margin:0 auto;padding:28px 24px;color:#8C8C8C;font-size:14px">&copy; 2026 Lina Krivenko</footer>
+</div>
+
 <button type="button" id="sharebtn" onclick="sharePage()" aria-label="Поделиться" style="position:fixed;right:16px;bottom:68px;width:44px;height:44px;border-radius:50%;background:#4F7A52;color:#FFFFFF;border:none;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;z-index:50">&#8599;</button>
 <button type="button" id="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" style="position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;background:#4F7A52;color:#FFFFFF;border:none;box-shadow:0 4px 14px rgba(0,0,0,.4);cursor:pointer;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;pointer-events:none;transition:opacity .25s ease">&uarr;</button>
 <script>
